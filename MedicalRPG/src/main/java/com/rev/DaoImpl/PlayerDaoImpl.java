@@ -42,7 +42,7 @@ public class PlayerDaoImpl implements PlayerDao {
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
-			Players = s.createQuery("from PLAYER").getResultList();
+			Players = s.createQuery("from Player").getResultList();
 			System.out.println(Players);
 			tx.commit();
 			s.close();

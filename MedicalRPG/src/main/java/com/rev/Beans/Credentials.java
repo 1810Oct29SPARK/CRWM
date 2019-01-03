@@ -2,21 +2,13 @@ package com.rev.Beans;
 
 public class Credentials {
 
-public Credentials(int iD, String email, String password) {
+public Credentials(String email, String password) {
 		super();
-		ID = iD;
-		Email = email;
-		Password = password;
+		this.Email = email;
+		this.Password = password;
 	}
-private int ID;
 private String Email;
 private String Password;
-public int getID() {
-	return ID;
-}
-public void setID(int iD) {
-	ID = iD;
-}
 public String getEmail() {
 	return Email;
 }
@@ -34,7 +26,6 @@ public int hashCode() {
 	final int prime = 31;
 	int result = 1;
 	result = prime * result + ((Email == null) ? 0 : Email.hashCode());
-	result = prime * result + ID;
 	result = prime * result + ((Password == null) ? 0 : Password.hashCode());
 	return result;
 }
@@ -52,8 +43,6 @@ public boolean equals(Object obj) {
 			return false;
 	} else if (!Email.equals(other.Email))
 		return false;
-	if (ID != other.ID)
-		return false;
 	if (Password == null) {
 		if (other.Password != null)
 			return false;
@@ -63,6 +52,7 @@ public boolean equals(Object obj) {
 }
 @Override
 public String toString() {
-	return "Credentials [ID=" + ID + ", Email=" + Email + ", Password=" + Password + "]";
+	return "Credentials [Email=" + Email + ", Password=" + Password + "]";
 }
+
 }

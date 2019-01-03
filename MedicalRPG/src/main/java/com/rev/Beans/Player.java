@@ -16,24 +16,25 @@ public class Player {
 	{
 		
 	}
-	public Player(int id, String email, String password, int score, String firstname, String lastname, String isdev) {
+	public Player(int id, String email, String password, String firstname, String lastname, int score, String isdev) {
 		super();
 		this.id = id;
-		Email = email;
-		Password = password;
-		Score = score;
-		Firstname = firstname;
-		Lastname = lastname;
+		this.Email = email;
+		this.Password = password;
+		this.Score = score;
+		this.Firstname = firstname;
+		this.Lastname = lastname;
 		this.isdev = isdev;
 	}
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="playerSequence")
+	/*@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="playerSequence")
 	@SequenceGenerator(allocationSize= 1,name="playerSequence",sequenceName="SQ_PLAYER_PK")
+	*/
 	@Column(name="PLAYER_ID")
 	private int id;
 	@Column(name="EMAIL")
 	private String Email;
-	@Column(name="PASSWORD")
+	@Column(name="PLAYER_PASSWORD")
 	private String Password;
 	@Column(name="HIGH_SCORES")
 	private int Score;
@@ -53,31 +54,31 @@ public class Player {
 		return Email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.Email = email;
 	}
 	public String getPassword() {
 		return Password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.Password = password;
 	}
 	public int getScore() {
 		return Score;
 	}
 	public void setScore(int score) {
-		Score = score;
+		this.Score = score;
 	}
 	public String getFirstname() {
 		return Firstname;
 	}
 	public void setFirstname(String firstname) {
-		Firstname = firstname;
+		this.Firstname = firstname;
 	}
 	public String getLastname() {
 		return Lastname;
 	}
 	public void setLastname(String lastname) {
-		Lastname = lastname;
+		this.Lastname = lastname;
 	}
 	public String getIsdev() {
 		return isdev;
