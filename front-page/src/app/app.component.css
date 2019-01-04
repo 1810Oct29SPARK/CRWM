@@ -6,8 +6,12 @@ body {
     display:flex;
     flex-direction:row;
     border:3px solid white;
+    height:100vh;
 }
 
+.vitals{
+    height:50vh;
+}
 .dialogue{
     width:50%;
 }

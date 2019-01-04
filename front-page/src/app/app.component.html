@@ -1,15 +1,19 @@
 <router-outlet></router-outlet>
-<div class="fullpage">
+<div class="fullpage" *ngIf="globals.isOn">
   <div class="dialogue">
   <app-dialogue></app-dialogue>
   </div>
   <div class="vitalsclipboard">
+    <div class="vitals">
     <app-vitals></app-vitals>
+    </div>
     <div class="clipboardsection">
     <app-clipboard></app-clipboard>
     </div>
   </div>
 </div>
-<div class="login">
+<div class="login" *ngIf="!globals.isOn">
   <app-login></app-login>
 </div>
+<button (click)="isOn = true">View Game</button>
+<button (click)="isOn = false">View Login</button>

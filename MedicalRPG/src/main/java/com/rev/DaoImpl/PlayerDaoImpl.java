@@ -15,20 +15,18 @@ import com.rev.Singleton.Single;
 public class PlayerDaoImpl implements PlayerDao {
 
 	//Session factory to obtain session
-	
+	SessionFactory sf = HibernateTest.getSession();
 	@Override
 	public Player getPlayerbyID(int id) {
 		Player u = null;
-		try(SessionFactory sf = HibernateTest.getSession())
+		try(Session s = sf.getCurrentSession())
 		{
-			Session s = sf.getCurrentSession();
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			u = (Player) s.get(Player.class, id);
 			System.out.println(u);
 			tx.commit();
-			s.close();
 		}
 		return u;
 	}
@@ -36,16 +34,14 @@ public class PlayerDaoImpl implements PlayerDao {
 	@Override
 	public List<Player> getallPlayers() {
 		List<Player> Players = new ArrayList<>();
-		try(SessionFactory sf = HibernateTest.getSession())
+		try(Session s = sf.getCurrentSession())
 		{
-			Session s = sf.getCurrentSession();
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			Players = s.createQuery("from Player").getResultList();
 			System.out.println(Players);
 			tx.commit();
-			s.close();
 		}
 		return Players;
 	}
@@ -53,15 +49,13 @@ public class PlayerDaoImpl implements PlayerDao {
 	@Override
 	public void updatePlayer(Player player) {
 		// TODO Auto-generated method stub
-		try(SessionFactory sf = HibernateTest.getSession())
+		try(Session s = sf.getCurrentSession())
 		{
-			Session s = sf.getCurrentSession();
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			s.update(player);
 			tx.commit();
-			s.close();
 		}	
 	}
 
@@ -82,15 +76,13 @@ public class PlayerDaoImpl implements PlayerDao {
 	@Override
 	public void deletePlayer(Player player) {
 		// TODO Auto-generated method stub
-		try(SessionFactory sf = HibernateTest.getSession())
+		try(Session s = sf.getCurrentSession())
 		{
-			Session s = sf.getCurrentSession();
 			System.out.println(Single.instance().toString());
 			System.out.println(s.toString());
 			Transaction tx =s.beginTransaction();
 			s.delete(player);
 			tx.commit();
-			s.close();
 		}		
 	}
 }

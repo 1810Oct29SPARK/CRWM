@@ -7,6 +7,7 @@ import { DialogueComponent } from './dialogue/dialogue.component';
 import { VitalsComponent } from './vitals/vitals.component';
 import { ClipboardComponent } from './clipboard/clipboard.component';
 import { LoginComponent } from './login/login.component';
+import { Globals } from './global';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

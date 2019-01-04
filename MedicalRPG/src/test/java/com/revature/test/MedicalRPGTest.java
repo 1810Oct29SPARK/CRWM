@@ -28,11 +28,12 @@ import com.rev.Service.AuthenticationService;
 public class MedicalRPGTest {
 
 	private static final PlayerDao playerDao = new PlayerDaoImpl();
+	private static final AuthenticationService auth = new AuthenticationService();
 
 	@Rule
 	public ExpectedException expectedException = ExpectedException.none();
 
-	/*@Test
+	@Test
 	public void testGetAllPlayers() {
 		List<Player> pList = new ArrayList<>();
 		pList = playerDao.getallPlayers();
@@ -57,23 +58,20 @@ public class MedicalRPGTest {
 	}
 	@Test
 	public void testIsValidUserIncorrectEmail() {
-		AuthenticationService auth = new AuthenticationService();
 		Credentials cred = new Credentials("h@indigo.com","yTXA0LXDON");
 		Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
 		assertFalse(p.equals(auth.isValidUser(cred)));
 	}
 	@Test
 	public void testIsValidUserIncorrectPassword() {
-		AuthenticationService auth = new AuthenticationService();
 		Credentials cred = new Credentials("hdurrell0@indigo.com","y");
 		Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
 		assertFalse(p.equals(auth.isValidUser(cred)));
 	}
 	@Test
 	public void testIsValidUserNullCredentials() {
-		AuthenticationService auth = new AuthenticationService();
 		Credentials cred = new Credentials(null,null);
 		Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
 		assertFalse(p.equals(auth.isValidUser(cred)));
-	}*/
+	}
 }

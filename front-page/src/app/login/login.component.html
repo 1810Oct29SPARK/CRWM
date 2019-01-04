@@ -6,7 +6,6 @@
 
 <!-- http://warpdoor.com/content/images/2014/May/25931-shot2.jpg -->
 
-<body style="background-image:url(http://warpdoor.com/content/images/2014/May/25931-shot2.jpg)">
   <div class="login-page">
       <div class="form">
           <form action="Home.html" method="post" class="register-form">
@@ -25,6 +24,8 @@
               <button>Login</button>
               <p class="message">Need a new account<a href="#">Register</a></p>
           </form>
+          <button (click)="globals.isOn = true">View Game</button>
+        <button (click)="globals.isOn = false">View Login</button>
       </div>
   </div>
   <!-- <script src="../js/Login.js"></script>
@@ -34,4 +35,3 @@
           $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
       });
   </script> -->
-</body>
