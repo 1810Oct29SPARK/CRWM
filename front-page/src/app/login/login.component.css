@@ -1,4 +1,10 @@
+@font-face{
+    font-family:"Arcade";
+    src: url("C:\Users\jmulr\OneDrive\Documents\CRWM\CRWM\ARCADECLASSIC.ttf") format("truetype");
+}
+
 form{
     color:black;
     margin-left: 25%;
+    font-family:"Arcade";
 }

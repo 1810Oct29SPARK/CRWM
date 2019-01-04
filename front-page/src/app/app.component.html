@@ -15,4 +15,4 @@
 <div class="login" *ngIf="this.globals.isOn">
   <app-login></app-login>
 </div>
-<button (click)="this.globals.isOn = true" style="margin-left:45vw; color:black;">View Login</button>
+<button (click)="this.globals.isOn = true" *ngIf="!this.globals.isOn" style="margin-left:45vw; color:black;">View Login</button>
