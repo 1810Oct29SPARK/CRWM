@@ -9,20 +9,30 @@
   <div class="login-page">
       <div class="form">
           <form action="Home.html" method="post" class="register-form">
+              <h2 style="color:white; margin-left:25%">Login</h2>
+              <span>
               <input type="text" placeholder="username" required/>
               <input type="email" placeholder="email" required />
+              </span>
+              <br>
+              <br>
+              <span>
               <input type="password" placeholder="newpassword"  required/>
               <input type="password" placeholder="confirmpassword"  required />
+              </span>
               <br />
-              <button (click)="this.globals.isOn = false">Get Started</button>
-              <p class="message">Already Registered<a href="#">Login</a></p>
+              <br>
+              <button (click)="this.globals.isOn = false" style="width:68.5%">Get Started</button>
+              <p class="message" style="color:white">Already Registered: <a href="#">Login</a></p>
           </form>
           <form action="Home.html" method="post" class="login-form">
+              <h2 style="color:white; margin-left:23%">Register</h2>
               <input type="text" placeholder="username" required/>
               <input type="password" placeholder="password" required/>
               <br />
-              <button (click)="this.globals.isOn = false">Login</button>
-              <p class="message">Need a new account<a href="#">Register</a></p>
+              <br>
+              <button (click)="this.globals.isOn = false" style="width:68.5%">Login</button>
+              <p class="message" style="color:white">Need a new account: <a href="#">Register</a></p>
           </form>
       </div>
   </div>
