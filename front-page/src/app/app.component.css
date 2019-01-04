@@ -28,11 +28,17 @@ body {
 
 .login{
     margin: auto;
+    margin-right: auto;
     width: 50%;
     float:center;
     border: 3px solid white;
 }
-
+.center{
+    display:flex;
+    float:center;
+    margin: auto;
+    width:50%;
+}
 body {
     background-color:mediumvioletred;
     height:100vh;
