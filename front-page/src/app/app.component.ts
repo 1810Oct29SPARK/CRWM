@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Globals } from './global';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-page';
-  isOn = false;
+  constructor(private globals:Globals){
+    
+  }
 }

@@ -21,11 +21,9 @@
               <input type="text" placeholder="username" required/>
               <input type="password" placeholder="password" required/>
               <br />
-              <button>Login</button>
+              <button (click)="this.globals.isOn = false">Login</button>
               <p class="message">Need a new account<a href="#">Register</a></p>
           </form>
-          <button (click)="globals.isOn = true">View Game</button>
-        <button (click)="globals.isOn = false">View Login</button>
       </div>
   </div>
   <!-- <script src="../js/Login.js"></script>

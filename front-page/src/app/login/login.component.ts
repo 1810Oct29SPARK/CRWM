@@ -7,10 +7,9 @@ import { Globals } from '../global';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  private isOn:boolean;
   constructor(private globals:Globals) {
-    this.isOn = globals.isOn;
    }
+
 
   ngOnInit() {
   }

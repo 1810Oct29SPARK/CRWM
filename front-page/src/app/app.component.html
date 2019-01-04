@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<div class="fullpage" *ngIf="globals.isOn">
+<div class="fullpage" *ngIf="!this.globals.isOn">
   <div class="dialogue">
   <app-dialogue></app-dialogue>
   </div>
@@ -12,8 +12,7 @@
     </div>
   </div>
 </div>
-<div class="login" *ngIf="!globals.isOn">
+<div class="login" *ngIf="this.globals.isOn">
   <app-login></app-login>
 </div>
-<button (click)="isOn = true">View Game</button>
-<button (click)="isOn = false">View Login</button>
+<button (click)="this.globals.isOn = true" style="margin-left:45vw">View Login</button>
