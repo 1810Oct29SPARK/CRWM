@@ -28,6 +28,10 @@ import com.rev.Service.AuthenticationService;
 public class MedicalRPGTest {
 
 	private static final PlayerDao playerDao = new PlayerDaoImpl();
+	private static final SymptomDao symptomDao = new SymptomDaoImpl();
+	private static final DiseaseDao diseaseDao = new DiseaseDaoImpl();
+	private static final PatientsDao patientsDao = new PatientsDaoImpl();
+	private static final LeaderBoardDao leaderboardDao = new LeaderBoardDaoImpl();
 	private static final AuthenticationService auth = new AuthenticationService();
 
 	@Rule
@@ -73,5 +77,79 @@ public class MedicalRPGTest {
 		Credentials cred = new Credentials(null,null);
 		Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON","Herby","Durrell",796121652,"false");
 		assertFalse(p.equals(auth.isValidUser(cred)));
+	}
+	
+	/*public Symptom getSymptombyID(int id);
+	public List<Symptom> getallSymptom();
+	public void updateSymptom(Symptom symptom);
+	public void addSymptom(Symptom symptom);
+	public void deleteSymptom(Symptom symptom);*/
+	@Test
+	public void testgetSymptomByIdRealId() {
+		Symptom thisSymptom = new Symptom(1, "Frequent Urination","Patient is urinating very often","yes","no",null);
+		assertTrue(thisSymptom.equals(symptomDao.getSymptombyID(1)));
+	}
+	@Test
+	public void testGetAllSymptoms() {
+		List<Symptom> sList = new ArrayList<>();
+		sList = symptomDao.getallPlayers();
+		assertEquals(18, sList.get(17).getId());
+	}
+	@Test
+	public void testGetSymptomByIdUnknownId() {
+		Symptom testSymptom = new Symptom(1, "Frequent Urination","Patient is urinating very often","yes","no",null);
+		assertFalse(testSymptom.equals(symptomDao.getSymptombyID(1000)));
+	}
+	@Test
+	public void testgetDiseaseByIdRealId() {
+		Disease thisDisease = new Disease(1, "Frequent Urination","Patient is urinating very often","yes","no",null);
+		assertTrue(thisDisease.equals(diseaseDao.getDiseasebyID(1)));
+	}
+	@Test
+	public void testGetAllDiseases() {
+		List<Disease> dList = new ArrayList<>();
+		dList = diseaseDao.getallDiseases();
+		Disease testDisease = new Disease(4,"Leukemia", "Cancer of the blood-forming tissue in the body");
+		assertTrue(testDisease.equals(dList.get(3)));
+	}
+	@Test
+	public void testGetDiseaseByIdUnknownId() {
+		Disease testDisease = new Disease(null,null,null);
+		assertTrue(testDisease.equals(diseaseDao.getDiseasebyID(1000)));
+	}
+	1	Hannah	Smith	46	1
+	@Test
+	public void testgetPatientByIdRealId() {
+		Patient thisPatient = new Patient(1, "Hannah","Smith",46,1);
+		assertTrue(thisPatient.equals(patientsDao.getPatientbyID(1)));
+	}
+	@Test
+	public void testGetAllPatients() {
+		List<Patient> pList = new ArrayList<>();
+		pList = patientsDao.getallPatients();
+		Patient testPatient = new Patient(3,"Alex",	"Sanchez",82,3);
+		assertTrue(testPatient.equals(pList.get(2)));
+	}
+	@Test
+	public void testGetPatientByIdUnknownId() {
+		Patient testPatient = new Patient(null,null,null,null,null);
+		assertTrue(testPatient.equals(patientsDao.getPatientbyID(1000)));
+	}
+	@Test
+	public void testgetLeaderboardByIdRealId() {
+		LeaderBoard thisLeaderboard = new LeaderBoard(5,"hdurrell0",796121652);
+		assertTrue(thisLeaderboard.equals(leaderboardDao.getLeaderBoardbyID(5)));
+	}
+	@Test
+	public void testGetAllLeaderBoards() {
+		List<LeaderBoard> lList = new ArrayList<>();
+		lList = leaderboardDao.getallLeaderBoards();
+		LeaderBoard testLeaderboard = new LeaderBoard(5,"hdurrell0",796121652);
+		assertTrue(testLeaderboard.equals(lList.get(4)));
+	}
+	@Test
+	public void testGetLeaderBoardByIdUnknownId() {
+		LeaderBoard testLeaderboard = new LeaderBoard(null,null,null);
+		assertTrue(testLeaderboard.equals(leaderboardDao.getPatientbyID(1000)));
 	}
 }
