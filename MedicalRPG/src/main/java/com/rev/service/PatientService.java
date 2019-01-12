@@ -8,7 +8,7 @@ import com.rev.beans.Player;
 import com.rev.dao.PatientsDao;
 import com.rev.daoimpl.PatientsDaoImpl;
 
-@Service
+@Service(value="patientService")
 public class PatientService {
 	
 	PatientsDao pdao = new PatientsDaoImpl();
@@ -27,5 +27,8 @@ public class PatientService {
 			}
 		}
 		return patient;			
+	}
+	public Patients getPatientById(int id) {
+		return pdao.getPatientsByID(id);
 	}
 }

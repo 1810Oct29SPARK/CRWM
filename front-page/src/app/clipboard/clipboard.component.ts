@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-clipboard',
@@ -7,11 +8,11 @@ import { Globals } from '../global';
   styleUrls: ['./clipboard.component.css']
 })
 export class ClipboardComponent implements OnInit {
-
-  constructor(private globals:Globals) { }
-
-  
-  ngOnInit() {
+  patient;
+  constructor(private globals:Globals, public http: HttpClient) { }
+  ngOnInit(){
   }
 
 }
+
+
