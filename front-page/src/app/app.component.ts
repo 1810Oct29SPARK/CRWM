@@ -15,6 +15,6 @@ import { Globals } from './global';
 export class AppComponent {
   title = 'front-page';
   constructor(private globals:Globals){
-    
+  
   }
 }

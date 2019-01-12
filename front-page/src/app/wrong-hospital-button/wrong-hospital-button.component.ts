@@ -8,7 +8,7 @@ import { Globals } from '../global';
 })
 export class WrongHospitalButtonComponent implements OnInit {
 
-  constructor(private globals: Globals) { }
+  constructor(public globals: Globals) { }
   ngOnInit() {
   }
 
