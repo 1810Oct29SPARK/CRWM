@@ -25,7 +25,7 @@ public class Symptom {
 //	public Set<Disease> diseases = new HashSet<>();
 
 	public Symptom(int symptom_ID, String symptom_Name, String symptom_Description, String is_Observable,
-			String is_Testable, String symptom_Test) {
+			String is_Testable, String symptom_Test, String isDialogue) {
 		super();
 		this.symptom_ID = symptom_ID;
 		this.symptom_Name = symptom_Name;
@@ -33,6 +33,7 @@ public class Symptom {
 		this.is_Observable = is_Observable;
 		this.is_Testable = is_Testable;
 		this.symptom_Test = symptom_Test;
+		this.isDialogue = isDialogue;
 	}
 
 	public Symptom() {
@@ -52,6 +53,16 @@ public class Symptom {
 	private String is_Testable;
 	@Column(name = "SYMPTOM_TEST")
 	private String symptom_Test;
+	@Column(name = "IS_DIALOGUE")
+	private String isDialogue;
+
+	public String getIsDialogue() {
+		return isDialogue;
+	}
+
+	public void setIsDialogue(String isDialogue) {
+		this.isDialogue = isDialogue;
+	}
 
 	public int getSymptom_ID() {
 		return symptom_ID;
@@ -103,15 +114,16 @@ public class Symptom {
 
 	@Override
 	public String toString() {
-		return "Symptom [symptom_ID=" + symptom_ID + ", symptom_Name=" + symptom_Name
-				+ ", symptom_Description=" + symptom_Description + ", is_Observable=" + is_Observable + ", is_Testable="
-				+ is_Testable + ", symptom_Test=" + symptom_Test + "]";
+		return "Symptom [symptom_ID=" + symptom_ID + ", symptom_Name=" + symptom_Name + ", symptom_Description="
+				+ symptom_Description + ", is_Observable=" + is_Observable + ", is_Testable=" + is_Testable
+				+ ", symptom_Test=" + symptom_Test + ", isDialogue=" + isDialogue + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((isDialogue == null) ? 0 : isDialogue.hashCode());
 		result = prime * result + ((is_Observable == null) ? 0 : is_Observable.hashCode());
 		result = prime * result + ((is_Testable == null) ? 0 : is_Testable.hashCode());
 		result = prime * result + ((symptom_Description == null) ? 0 : symptom_Description.hashCode());
@@ -130,6 +142,11 @@ public class Symptom {
 		if (getClass() != obj.getClass())
 			return false;
 		Symptom other = (Symptom) obj;
+		if (isDialogue == null) {
+			if (other.isDialogue != null)
+				return false;
+		} else if (!isDialogue.equals(other.isDialogue))
+			return false;
 		if (is_Observable == null) {
 			if (other.is_Observable != null)
 				return false;
