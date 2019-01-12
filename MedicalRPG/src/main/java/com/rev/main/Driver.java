@@ -32,7 +32,7 @@ public class Driver {
 
 		//Patient
 		PatientsDao pat = new PatientsDaoImpl();
-//		System.out.println(ptsd.getPatientsByID(1));
+		System.out.println(pat.getPatientsByID(1));
 //		System.out.println(pat.getAllPatients());
 
 //		funWithSessions(sf);
