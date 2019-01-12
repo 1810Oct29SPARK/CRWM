@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.rev.beans.Patients;
-import com.rev.beans.Patients;
 import com.rev.service.PatientService;
 
 @Controller
-@CrossOrigin(origins="*", allowedHeaders="*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PatientController {
 
 	private PatientService patientInfo;
@@ -27,14 +26,17 @@ public class PatientController {
 		super();
 		this.patientInfo = patientService;
 	}
-	@GetMapping(value = "/{id}")
-	// @ResponseBody
-	public ResponseEntity<Patients> getPatientsbyID(@PathVariable int id) {
-		Patients p = patientInfo.getPatientById(id);
-		if (p == null) {
+	/*@GetMapping(value = "/patient")
+	public String getStaticLogin() {
+		return "forward:/static/staticQuery.html";
+	}*/
+	@GetMapping(value="/{id}")
+		public ResponseEntity<Patients> getPatientById(@PathVariable int id){
+		Patients b = patientInfo.getPatientById(id);
+		if (b == null) {
 			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		} else {
-			return new ResponseEntity<>(p, HttpStatus.OK);
+			return new ResponseEntity<>(b, HttpStatus.OK);
 		}
 	}
 
