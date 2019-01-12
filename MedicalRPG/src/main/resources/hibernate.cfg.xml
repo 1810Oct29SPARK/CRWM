@@ -20,7 +20,6 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<mapping class="com.rev.beans.Player"></mapping>
 		<mapping class="com.rev.beans.Disease"></mapping>
-		<mapping class="com.rev.beans.LeaderBoard"></mapping>
 		<mapping class="com.rev.beans.Patients"></mapping>
 		<mapping class="com.rev.beans.Symptom"></mapping>
 	</session-factory>

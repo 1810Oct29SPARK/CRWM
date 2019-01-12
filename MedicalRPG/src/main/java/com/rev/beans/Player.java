@@ -57,8 +57,6 @@ public class Player {
 	private String lastname;
 	@Column(name = "IS_DEV")
 	private String isdev;
-	@OneToMany(mappedBy = "players", fetch = FetchType.LAZY)
-	private List<LeaderBoard> leaderboard = new ArrayList<>();
 
 	@Override
 	public String toString() {
@@ -121,15 +119,7 @@ public class Player {
 	public void setIsdev(String isdev) {
 		this.isdev = isdev;
 	}
-
-	public List<LeaderBoard> getLeaderboard() {
-		return leaderboard;
-	}
-
-	public void setLeaderboard(List<LeaderBoard> leaderboard) {
-		this.leaderboard = leaderboard;
-	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -137,7 +127,6 @@ public class Player {
 		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
 		result = prime * result + ((isdev == null) ? 0 : isdev.hashCode());
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
-		result = prime * result + ((leaderboard == null) ? 0 : leaderboard.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + player_ID;
 		result = prime * result + score;
@@ -168,11 +157,6 @@ public class Player {
 			if (other.lastname != null)
 				return false;
 		} else if (!lastname.equals(other.lastname))
-			return false;
-		if (leaderboard == null) {
-			if (other.leaderboard != null)
-				return false;
-		} else if (!leaderboard.equals(other.leaderboard))
 			return false;
 		if (password == null) {
 			if (other.password != null)

@@ -1,6 +1,6 @@
 package com.rev.daoimpl;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 
 import org.hibernate.Session;
@@ -63,6 +63,18 @@ public class PlayerDaoImpl implements PlayerDao {
 			s.close();
 		}
 		return players;
+	}
+	
+	@Override
+	public List<Player> getPlayersByHighScore() {
+		List<Player> lp = new ArrayList<>();
+		try (Session s = sf.getCurrentSession()) {
+			Transaction tx = s.beginTransaction();
+			lp = s.createQuery("from Player order by score desc").getResultList();
+			tx.commit();
+			s.close();
+		}
+		return lp;
 	}
 
 	/**
