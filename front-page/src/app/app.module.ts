@@ -41,7 +41,7 @@ import { QuestionButtonComponent } from './question-button/question-button.compo
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [Globals],
+  providers: [Globals, ThankyoubuttonComponent, ClipboardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

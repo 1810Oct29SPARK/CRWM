@@ -14,7 +14,11 @@ import { Globals } from './global';
 })
 export class AppComponent {
   title = 'front-page';
-  constructor(private globals:Globals){
-  
+  constructor(private globals:Globals){}
+
+  introducePatient(){
+    document.getElementById("introPatient").innerHTML += "/n> Great! I'd like to introduce you to your new patient, " + this.globals.patientFirstName + " " + this.globals.patientLastName;
+    document.getElementById("")
+    this.globals.firstButtonOn = false;
   }
 }

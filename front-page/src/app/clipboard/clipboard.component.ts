@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./clipboard.component.css']
 })
 export class ClipboardComponent implements OnInit {
-  patient;
+  patientFirstName;
+  patientLastName;
   constructor(private globals:Globals, public http: HttpClient) { }
   ngOnInit(){
   }
-
 }
 
 

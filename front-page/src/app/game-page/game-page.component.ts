@@ -13,15 +13,7 @@ export class GamePageComponent implements OnInit {
   constructor(public globals: Globals, public http: HttpClient) { }
 
   ngOnInit() {
-    this.id = this.random();
-  }
-  loadData(){
-    this.http.get('http://localhost:9999/MedicalRPG/1').subscribe(data => {
-        this.data = data;
-    })
-  }
-
-  random(){
-    return Math.floor(Math.random() * 3) + 1;
+    this.id = this.globals.random()
+    this.globals.loadData(this.id);
   }
 }
