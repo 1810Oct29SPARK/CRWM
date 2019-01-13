@@ -6,6 +6,12 @@
     float:center;
 }
 
+#health{
+    
+    width:300px;
+    height:25px;
+    border-radius:50%;
+}
 .heartRate{
     margin-left:5%;
 }
