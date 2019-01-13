@@ -19,9 +19,21 @@ export class Globals{
     observableSymptom:string;
     observation:string = "You notice ";
     data;
+    isDiagnosed: boolean = false;
      
     
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));
+      }
+      loadData(id:number){
+        this.http.get(`http://localhost:9999/MedicalRPG/${id}`).subscribe(data => {
+            this.data = data;
+            console.log(data);
+        });
+
+      }
+    
+      random(){
+        return Math.floor(Math.random() * 3) + 1;
       }
 }
