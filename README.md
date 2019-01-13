@@ -27,3 +27,4 @@ The Symptoms table consists of 6 columns: PK ID, name, description, observable, 
 
 <h1>Application-Tier</h1>
 
+
