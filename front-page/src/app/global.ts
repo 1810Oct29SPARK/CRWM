@@ -9,7 +9,6 @@ export class Globals{
     isOn:boolean = true;
     firstButtonOn = true;
     whichTestButton = false;
-    showName = false;
     introStart:string = "> Welcome,  ";
     introEnd:string = "I'm Dr. Hawk. Congratulations  on  passing  medical  school! Now  your  real  test  begins.";
     username:string = "CapnKnuckles";
@@ -28,9 +27,6 @@ export class Globals{
         this.http.get(`http://localhost:9999/MedicalRPG/${id}`).subscribe(data => {
             this.data = data;
             console.log(data);
-            this.patientFirstName = this.data.first_Name;
-            this.patientLastName = this.data.last_Name;
-            this.observableSymptom = this.data.disease.symptom[0].symptom_Name;
         });
 
       }
