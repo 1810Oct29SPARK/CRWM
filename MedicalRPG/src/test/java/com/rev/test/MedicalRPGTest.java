@@ -2,8 +2,7 @@
  * @author Jake Mulrenin
  */
 package com.rev.test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals; import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -15,17 +14,14 @@ import org.junit.rules.ExpectedException;
 
 import com.rev.beans.Credentials;
 import com.rev.beans.Disease;
-import com.rev.beans.LeaderBoard;
 import com.rev.beans.Patients;
 import com.rev.beans.Player;
 import com.rev.beans.Symptom;
 import com.rev.dao.DiseaseDao;
-import com.rev.dao.LeaderBoardDao;
 import com.rev.dao.PatientsDao;
 import com.rev.dao.PlayerDao;
 import com.rev.dao.SymptomDao;
 import com.rev.daoimpl.DiseaseDaoImpl;
-import com.rev.daoimpl.LeaderBoardDaoImpl;
 import com.rev.daoimpl.PatientsDaoImpl;
 import com.rev.daoimpl.PlayerDaoImpl;
 import com.rev.daoimpl.SymptomDaoImpl;
@@ -35,7 +31,6 @@ public class MedicalRPGTest {
     private static final SymptomDao symptomDao = new SymptomDaoImpl();
     private static final DiseaseDao diseaseDao = new DiseaseDaoImpl();
     private static final PatientsDao patientsDao = new PatientsDaoImpl();
-    private static final LeaderBoardDao leaderboardDao = new LeaderBoardDaoImpl();
     private static final LoginService auth = new LoginService();
     @Rule
     public ExpectedException expectedException = ExpectedException.none();

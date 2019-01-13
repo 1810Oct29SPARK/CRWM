@@ -9,25 +9,28 @@ import com.rev.beans.Player;
 import com.rev.dao.PatientsDao;
 import com.rev.daoimpl.PatientsDaoImpl;
 
-@Service(value="patientService")
+@Service(value = "patientService")
 public class PatientService {
 
 	PatientsDao pdao = new PatientsDaoImpl();
 
-//	public Patients findPatient(String name) {
-//		Patients patient = null;
-//		List<Patients> patientList = pdao.getAllPatients();
-//		if (name != null) {
-//			for (Patients p : patientList) {
-//				if (name.equals(p.getFirst_Name())) {
-//					patient = p;
-//					return patient;
-//				}
-//			}
-//		}
-//		return patient;
-//	}
 	public Patients getPatientById(int id) {
 		return pdao.getPatientsByID(id);
+	}
+
+	public List<Patients> getAllPatients() {
+		return pdao.getAllPatients();
+	}
+
+	public void updatePatients(Patients patients) {
+		
+	}
+
+	public void addPatients(Patients patients) {
+		
+	}
+
+	public void deletePatients(Patients patients) {
+		
 	}
 }

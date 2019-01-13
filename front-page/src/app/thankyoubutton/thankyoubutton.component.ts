@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from "@angular/core";
 import {Globals} from '../global';
+import {GamePageComponent} from '../game-page/game-page.component';
 
 @Injectable()
 @Component({

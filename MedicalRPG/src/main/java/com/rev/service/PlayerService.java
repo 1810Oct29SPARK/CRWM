@@ -16,6 +16,10 @@ public class PlayerService {
 	public List<Player> getAllPlayers() {
 		return pdao.getallPlayers();
 	}
+	
+	public List<Player> getPlayersByHighScore() {
+		return pdao.getPlayersByHighScore();
+	}
 
 	public Player getPlayer(int id) {
 		return pdao.getPlayerByID(id);

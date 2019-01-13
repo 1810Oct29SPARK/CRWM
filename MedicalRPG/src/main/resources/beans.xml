@@ -8,9 +8,6 @@
 	<bean name="disease" class="com.rev.beans.Disease">
 
 	</bean>
-	<bean name="leaderboard" class="com.rev.beans.LeaderBoard">
-
-	</bean>
 	<bean name="patients" class="com.rev.beans.Patients">
 
 	</bean>

@@ -31,6 +31,11 @@ public class PlayerController {
 	public ResponseEntity<List<Player>> getAllPlayers() {
 		return new ResponseEntity<>(playerservices.getAllPlayers(), HttpStatus.OK);
 	}
+	
+	@GetMapping(value="/highscore")
+	public ResponseEntity<List<Player>> getPlayersByHighScore() {
+		return new ResponseEntity<>(playerservices.getPlayersByHighScore(), HttpStatus.OK);
+	}
 
 	@GetMapping(value = "/{id}")
 	// @ResponseBody

@@ -5,10 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.rev.beans.Player;
-import com.rev.dao.LeaderBoardDao;
 import com.rev.dao.PatientsDao;
 import com.rev.dao.PlayerDao;
-import com.rev.daoimpl.LeaderBoardDaoImpl;
 import com.rev.daoimpl.PatientsDaoImpl;
 import com.rev.daoimpl.PlayerDaoImpl;
 import com.rev.util.HibernateUtil;
@@ -24,15 +22,11 @@ public class Driver {
 		PlayerDao pd = new PlayerDaoImpl();
 //		System.out.println(use.getallPlayers());
 //		System.out.println(pd.getPlayerByID(10200));
+		System.out.println(pd.getPlayersByHighScore());
 		
-		//Leaderboard
-		LeaderBoardDao lbd = new LeaderBoardDaoImpl();
-//		System.out.println(lbd.getAllLeaderBoards());
-//		System.out.println(lbd.getLeaderBoardbyID(1));
-
 		//Patient
 		PatientsDao pat = new PatientsDaoImpl();
-//		System.out.println(ptsd.getPatientsByID(1));
+//		System.out.println(pat.getPatientsByID(1));
 //		System.out.println(pat.getAllPatients());
 
 //		funWithSessions(sf);
