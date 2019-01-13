@@ -4,8 +4,10 @@ change the views depending on what is clicked on*/
 import{Injectable} from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable()
 export class Globals{
+    constructor(public http: HttpClient){}
     isOn:boolean = true;
     firstButtonOn = true;
     whichTestButton = false;
@@ -18,22 +20,8 @@ export class Globals{
     observation:string = "You notice ";
     data;
      
-    constructor(public http: HttpClient){}
+    
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));
       }
-
-    randomizePatient(){
-
-    }
-
-    loadData(){
-        this.http.get('http://localhost:9999/MedicalRPG/1').subscribe(data => {
-            this.data = data;
-        })
-    }
-
-    random(){
-        Math.floor(Math.random() * 3) + 1;
-    }
 }
