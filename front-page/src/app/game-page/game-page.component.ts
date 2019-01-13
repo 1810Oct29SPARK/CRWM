@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from '../models/patient.model';
+import { Globals } from '../global';
 @Component({
   selector: 'app-game-page',
   templateUrl: './game-page.component.html',

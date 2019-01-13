@@ -22,7 +22,7 @@ public class Driver {
 		PlayerDao pd = new PlayerDaoImpl();
 //		System.out.println(use.getallPlayers());
 //		System.out.println(pd.getPlayerByID(10200));
-		System.out.println(pd.getPlayersByHighScore());
+//		System.out.println(pd.getPlayersByHighScore());
 		
 		//Patient
 		PatientsDao pat = new PatientsDaoImpl();

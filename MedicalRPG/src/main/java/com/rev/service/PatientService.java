@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.rev.beans.Patients;
-import com.rev.beans.Player;
 import com.rev.dao.PatientsDao;
 import com.rev.daoimpl.PatientsDaoImpl;
 
