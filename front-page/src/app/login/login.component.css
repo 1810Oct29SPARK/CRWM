@@ -1,0 +1,16 @@
+form{
+    color:black;
+    margin: auto;
+    font-family:"Arcade";
+}
+.login-page{
+    display:flex;
+    float:center;
+    border:3px solid white;
+    width:40vw;
+    margin:auto;
+}
+.form{
+    text-align:center;
+    margin: 0 auto;
+}

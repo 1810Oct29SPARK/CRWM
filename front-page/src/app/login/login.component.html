@@ -1,0 +1,44 @@
+<!--@author Max Couch, Jake Mulrenin-->
+<!-- code below will style a form for user to login / register.
+This also holds the onclick function for the login or register buttons
+that changes the value of isON that is used to change the views shown
+to the user -->
+
+<!-- http://warpdoor.com/content/images/2014/May/25931-shot2.jpg -->
+<div class="login-page">
+    <div class="form">
+        <form action="/game" method="get" class="register-form">
+          <h2 style="color:white; font-size:50px; float:center">Register</h2>
+            <span>
+            <input type="text" placeholder="username" required/>
+            <input type="email" placeholder="email" required />
+            </span>
+            <br>
+            <br>
+            <span>
+            <input type="password" placeholder="newpassword"  required/>
+            <input type="password" placeholder="confirmpassword"  required />
+            </span>
+            <br />
+            <br>
+            <button style="width:68%">Get Started</button>
+            <p class="message" style="color:white">Already Registered: <a href="#">Login</a></p>
+        </form>
+        <form action="/game" method="get" class="login-form">
+              <h2 style="color:white; font-size:50px">Login</h2>
+            <input type="text" placeholder="username" required/>
+            <input type="password" placeholder="password" required/>
+            <br />
+            <br>
+            <button style="width:68%">Login</button>
+            <p class="message" style="color:white">Need a new account: <a href="#">Register</a></p>
+        </form>
+    </div>
+</div>
+<!-- <script src="../js/Login.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $('.message a').click(function () {
+        $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+    });
+</script> -->

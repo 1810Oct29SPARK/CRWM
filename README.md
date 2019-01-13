@@ -1,6 +1,8 @@
 # CRWM
 Medical RPG
 
+A text RPG where the player simulates as an up-and-coming all-star doctor facing the dangerous world of diseases. 
+
 Authors: Max, Rebecca, Darius, Jake
 
 Welcome to Diagnosis. 
@@ -16,3 +18,4 @@ The Patients table consists of 5 columns: a PK ID, first_name, last_name, age, a
 The Diseases table consists of 3 columns: A PK ID, name, and description.
 The Disease_Symptoms is a junction table that connects Diseases and Symptoms for a Many-to-Many multiplicity relationship. (Many diseases can have many symptoms, and many symptoms can be displayed across many diseases). Currently, for the sake of simplicity, every disease has their own symptoms. Future implementation would make it so a symptom can describe many diseases (as diseases can display similar symptoms). The idea behind this is to give the player an extra challenge in their diagnosis. For now, we keep things simple to assemble mechanics as quickly and smoothly as possible.
 The Symptoms table consists of 6 columns: PK ID, name, description, observable, testable, and test. 
+

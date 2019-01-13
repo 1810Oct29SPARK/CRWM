@@ -1,0 +1,14 @@
+<div class="fullpage" style="background:black"><!--*ngIf="!this.globals.isOn"-->
+  <div class="dialogue">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="vitalsclipboard">
+    <div class="vitals">
+    <app-vitals></app-vitals>
+    </div>
+    <div class="clipboardsection">
+    <app-clipboard></app-clipboard>
+    </div>
+  </div>
+</div>
+<a href="/login"><button style="margin-left:45vw; color:black;">View Login</button></a> <!--*ngIf="!this.globals.isOn"-->

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- the above specifies the DTD(Document type Definition) for a hibernate 
+	congif file. This file is invlaid if it conforms to the allowed elements 
+	to the listed in the DTD An Xml file can be well formed without being invalid. -->
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.username">jmulrenin</property>
+		<property name="hibernate.connection.password">password</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@mulreninj-db.cohu8vxqabom.us-east-2.rds.amazonaws.com:1521:orcl</property>
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<mapping class="com.rev.beans.Player"></mapping>
+		<mapping class="com.rev.beans.Disease"></mapping>
+		<mapping class="com.rev.beans.LeaderBoard"></mapping>
+		<mapping class="com.rev.beans.Patients"></mapping>
+		<mapping class="com.rev.beans.Symptom"></mapping>
+	</session-factory>
+</hibernate-configuration>

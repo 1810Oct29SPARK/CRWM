@@ -1,0 +1,6 @@
+.center{
+    display:flex;
+    flex-direction:row;
+    margin-left:28.5%;
+    float:center;
+}
