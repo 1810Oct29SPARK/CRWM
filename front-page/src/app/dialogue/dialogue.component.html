@@ -1,6 +1,6 @@
 <div class="text" readonly>
   <p  id="dialoguetext"></p>
-  <p *ngIf="this.beginGame"><app-thankyoubutton></app-thankyoubutton></p>
+  <p *ngIf="this.globals.beginGame"><app-thankyoubutton></app-thankyoubutton></p>
   <p id="introPatient"></p>
   <p class="patientDialogue" id="patientGreeting"></p>
   <p class="userDialogue" id="userGreeting"></p>
@@ -16,4 +16,6 @@
   <p *ngIf="this.globals.showDiseaseOptions"><app-diabetesbutton></app-diabetesbutton> OR <app-fibromyalgiabutton></app-fibromyalgiabutton> OR <app-malariabutton></app-malariabutton>
   <app-laryngitisbutton></app-laryngitisbutton> OR <app-motorneuronbutton></app-motorneuronbutton> OR <app-leukemiabutton></app-leukemiabutton></p>
   <p id="rightOrWrong"></p>
+  <p *ngIf="this.globals.showNewPatientButton" id="newPatientButton"><button class="userButton" id="newPatientButton1" (click)="this.globals.restartGame()">Next Patient!</button>
+  </p>
 </div>
