@@ -27,5 +27,8 @@ export class GamePageComponent implements OnInit {
     this.globals.questionSymptom = '';
     this.globals.testSymptom = '';
     this.globals.whichTest='';
+    this.globals.showDiagnosisCheatSheet = false;
+    this.globals.health = 100;
+    this.globals.showDiseaseOptions = false;
   }
 }

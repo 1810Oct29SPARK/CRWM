@@ -14,9 +14,15 @@ export class ObservebuttonComponent implements OnInit {
   }
 
   observePatient(){
-    this.globals.observableSymptom = this.globals.data.disease.symptom[0].symptom_Name;
-    document.getElementById("observation").innerHTML = "> Okay, I just want to take a moment to check you over to see any noticable symptoms.";
-    this.globals.sleep(4000).then(() => {document.getElementById("observationConclusion").innerHTML = this.globals.observation + this.globals.observableSymptom});
+
+    for (var i = 0; i < 3; i++){
+      if (this.globals.data.disease.symptom[i].is_Observable == 'yes'){
+        this.globals.observableSymptom = this.globals.data.disease.symptom[i].symptom_Name;
+        document.getElementById("observation").innerHTML = "> Okay, I just want to take a moment to check you over to see any noticable symptoms.";
+        this.globals.sleep(4000).then(() => {document.getElementById("observationConclusion").innerHTML = this.globals.observation + this.globals.observableSymptom});    
+      }
+    }
     this.observeButtonOn = false;
+    this.globals.health -= 10;
   }
 }

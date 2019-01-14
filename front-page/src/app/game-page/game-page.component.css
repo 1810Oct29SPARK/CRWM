@@ -12,7 +12,7 @@ body {
 }
 .vitals{
     background-color:black;
-    height:30vh;
+    height:33vh;
 }
 .dialogue{
     background-color:black;
@@ -25,7 +25,7 @@ body {
 }
 .clipboardsection{
     background-image: url("/assets/Clipboard.jpg");
-    height:70vh;
+    height:67vh;
     background-size:cover;
     border-top:3px solid white;
 }

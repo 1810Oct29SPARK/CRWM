@@ -13,6 +13,14 @@ export class ClipboardComponent implements OnInit {
   constructor(private globals:Globals, public http: HttpClient) { }
   ngOnInit(){
   }
+
+  toggleDiagnosis(){
+    if(this.globals.showDiagnosisCheatSheet == false){
+    this.globals.showDiagnosisCheatSheet = true;
+    }else{
+      this.globals.showDiagnosisCheatSheet = false;
+    }
+  }
 }
 
 

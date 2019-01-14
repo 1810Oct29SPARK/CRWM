@@ -10,19 +10,10 @@ import { Globals } from '../global';
   styleUrls: ['./vitals.component.css']
 })
 export class VitalsComponent implements OnInit {
-  health:number = 100;
   constructor(public globals: Globals) { }
 
   ngOnInit() {
     this.globals.sleep(10000);
-    this.decreaseHealth();
   }
 
-  decreaseHealth(){
-    while(!this.globals.isDiagnosed){
-      this.globals.sleep(3000);
-      this.health -= 1;
-      return this.health;
-    }
-  }
 }

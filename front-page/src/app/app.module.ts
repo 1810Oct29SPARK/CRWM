@@ -21,6 +21,13 @@ import { WrongHospitalButtonComponent } from './wrong-hospital-button/wrong-hosp
 import { ObservebuttonComponent } from './observebutton/observebutton.component';
 import { TestbuttonComponent } from './testbutton/testbutton.component';
 import { QuestionButtonComponent } from './question-button/question-button.component';
+import { DiagnosebuttonComponent } from './diagnosebutton/diagnosebutton.component';
+import { DiabetesbuttonComponent } from './diabetesbutton/diabetesbutton.component';
+import { LeukemiabuttonComponent } from './leukemiabutton/leukemiabutton.component';
+import { MalariabuttonComponent } from './malariabutton/malariabutton.component';
+import { LaryngitisbuttonComponent } from './laryngitisbutton/laryngitisbutton.component';
+import { FibromyalgiabuttonComponent } from './fibromyalgiabutton/fibromyalgiabutton.component';
+import { MotorneuronbuttonComponent } from './motorneuronbutton/motorneuronbutton.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,14 @@ import { QuestionButtonComponent } from './question-button/question-button.compo
     WrongHospitalButtonComponent,
     ObservebuttonComponent,
     TestbuttonComponent,
-    QuestionButtonComponent
+    QuestionButtonComponent,
+    DiagnosebuttonComponent,
+    DiabetesbuttonComponent,
+    LeukemiabuttonComponent,
+    MalariabuttonComponent,
+    LaryngitisbuttonComponent,
+    FibromyalgiabuttonComponent,
+    MotorneuronbuttonComponent
   ],
   imports: [
     BrowserModule,
