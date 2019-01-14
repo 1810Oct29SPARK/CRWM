@@ -48,7 +48,7 @@ import { MotorneuronbuttonComponent } from './motorneuronbutton/motorneuronbutto
     MalariabuttonComponent,
     LaryngitisbuttonComponent,
     FibromyalgiabuttonComponent,
-    MotorneuronbuttonComponent
+    MotorneuronbuttonComponent,
   ],
   imports: [
     BrowserModule,

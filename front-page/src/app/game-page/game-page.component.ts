@@ -21,7 +21,6 @@ export class GamePageComponent implements OnInit {
     this.globals.whichTestButton1 = false;
     this.globals.whichTestButton2 = false;
     this.globals.whichTestButton3 = false;
-    console.log(this.globals.patientFirstName);
     this.id = this.globals.random();
     this.globals.loadData(this.id);
     this.globals.questionSymptom = '';
@@ -30,5 +29,7 @@ export class GamePageComponent implements OnInit {
     this.globals.showDiagnosisCheatSheet = false;
     this.globals.health = 100;
     this.globals.showDiseaseOptions = false;
+    this.globals.showNewPatient = false;
+    this.globals.restartTheGame = false;
   }
 }

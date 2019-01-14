@@ -29,6 +29,10 @@ export class Globals{
     health:number = 100;
     showDiseaseOptions = false;
     score:number = 0;
+    showNewPatient:boolean = false;
+    restartTheGame:boolean = false;
+    beginGame:boolean = false;
+    showNewPatientButton = false;
     
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));
@@ -43,5 +47,27 @@ export class Globals{
     
       random(){
         return Math.floor(Math.random() * 3) + 1;
+      }
+
+      restartGame(){
+        this.loadData(this.random());
+        document.getElementById("dialoguetext").innerHTML = 'Another patient has walked in!';
+        document.getElementById("introPatient").innerHTML = '';
+        document.getElementById("patientGreeting").innerHTML = '';
+        document.getElementById("userGreeting").innerHTML = '';
+        document.getElementById("observation").innerHTML = '';
+        document.getElementById("observationConclusion").innerHTML = '';
+        document.getElementById("question").innerHTML = '';
+        document.getElementById("questionResponse").innerHTML = '';
+        document.getElementById("test").innerHTML = '';
+        document.getElementById("testResults").innerHTML = '';
+        document.getElementById("rightOrWrong").innerHTML = '';
+        this.beginGame = true;
+        this.health = 100;
+        this.firstButtonOn = true;
+        this.whichTestButton1 = false;
+        this.showDiseaseOptions = false;
+        this.restartTheGame = false;
+        this.showNewPatientButton = false;
       }
 }
