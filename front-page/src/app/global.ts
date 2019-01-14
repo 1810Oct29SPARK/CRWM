@@ -15,7 +15,7 @@ export class Globals{
     whichTestButton3 = false;
     introStart:string = "> Welcome,  ";
     introEnd:string = "I'm Dr. Hawk. Congratulations  on  passing  medical  school! Now  your  real  test  begins.";
-    username:string = "CapnKnuckles";
+    username:string;
     patientFirstName:string;
     patientLastName:string;
     observableSymptom:string;
@@ -69,5 +69,10 @@ export class Globals{
         this.showDiseaseOptions = false;
         this.restartTheGame = false;
         this.showNewPatientButton = false;
+        this.patientFirstName = '';
+        this.patientLastName = '';
+        this.observableSymptom = '';
+        this.questionSymptom = '';
+        this.testSymptom = '';
       }
 }
