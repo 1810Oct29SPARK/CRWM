@@ -17,12 +17,12 @@ export class ThankyoubuttonComponent implements OnInit {
   ngOnInit() {
   }
   introducePatient(){
-    document.getElementById("introPatient").innerHTML += "> Great! I'd like to introduce you to your new patient, " + this.globals.patientFirstName + " " + this.globals.patientLastName;
     this.globals.patientFirstName = this.globals.data.first_Name;
     this.globals.patientLastName = this.globals.data.last_Name;
+    document.getElementById("introPatient").innerHTML += "> Great! I'd like to introduce you to your new patient, " + this.globals.patientFirstName + " " + this.globals.patientLastName;
     this.globals.sleep(2500).then(() => {document.getElementById("patientGreeting").innerHTML += "> It's nice to meet you Dr. " + this.globals.username + ". I hope you can help me."});
     this.globals.sleep(5000).then(() => {document.getElementById("userGreeting").innerHTML += "> It's nice to meet you, " + this.globals.patientFirstName + ". Well, let's get started."});
     this.globals.firstButtonOn = false;
-    this.globals.sleep(7500).then(() => {this.globals.whichTestButton = true});
+    this.globals.sleep(7500).then(() => {this.globals.whichTestButton1 = true});
   }
 }

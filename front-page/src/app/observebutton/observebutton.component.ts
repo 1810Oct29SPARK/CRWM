@@ -14,9 +14,8 @@ export class ObservebuttonComponent implements OnInit {
   }
 
   observePatient(){
-    document.getElementById("observation").innerHTML = "> Okay, I just want to take a moment to check you over to see any noticable symptoms.";
     this.globals.observableSymptom = this.globals.data.disease.symptom[0].symptom_Name;
-    this.globals.sleep(3000).then(() => this.globals.observableSymptom = "extensive sweating");
+    document.getElementById("observation").innerHTML = "> Okay, I just want to take a moment to check you over to see any noticable symptoms.";
     this.globals.sleep(4000).then(() => {document.getElementById("observationConclusion").innerHTML = this.globals.observation + this.globals.observableSymptom});
     this.observeButtonOn = false;
   }

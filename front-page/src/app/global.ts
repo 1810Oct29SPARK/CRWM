@@ -10,7 +10,9 @@ export class Globals{
     constructor(public http: HttpClient){}
     isOn:boolean = true;
     firstButtonOn = true;
-    whichTestButton = false;
+    whichTestButton1 = false;
+    whichTestButton2 = false;
+    whichTestButton3 = false;
     introStart:string = "> Welcome,  ";
     introEnd:string = "I'm Dr. Hawk. Congratulations  on  passing  medical  school! Now  your  real  test  begins.";
     username:string = "CapnKnuckles";
@@ -20,7 +22,9 @@ export class Globals{
     observation:string = "You notice ";
     data;
     isDiagnosed: boolean = false;
-     
+    questionSymptom:string;
+    testSymptom:string;
+    whichTest:string;
     
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));

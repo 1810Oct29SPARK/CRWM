@@ -18,9 +18,14 @@ export class GamePageComponent implements OnInit {
     this.globals.observableSymptom = '';
     this.globals.isOn = true;
     this.globals.firstButtonOn = true;
-    this.globals.whichTestButton = false;
+    this.globals.whichTestButton1 = false;
+    this.globals.whichTestButton2 = false;
+    this.globals.whichTestButton3 = false;
     console.log(this.globals.patientFirstName);
     this.id = this.globals.random();
     this.globals.loadData(this.id);
+    this.globals.questionSymptom = '';
+    this.globals.testSymptom = '';
+    this.globals.whichTest='';
   }
 }
