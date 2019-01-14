@@ -25,6 +25,10 @@ export class Globals{
     questionSymptom:string;
     testSymptom:string;
     whichTest:string;
+    showDiagnosisCheatSheet:boolean = false;
+    health:number = 100;
+    showDiseaseOptions = false;
+    score:number = 0;
     
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));

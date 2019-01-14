@@ -1,18 +1,62 @@
 <div>
-  <p class="title">Diagnosis</p>
-  <textarea class="text" readonly>
+  <button class="title" (click)="this.toggleDiagnosis()">Diagnosis</button>
+  <textarea class="text" *ngIf="!this.globals.showDiagnosisCheatSheet" readonly>
   Patient Name: 
   -{{this.globals.patientFirstName}}  {{this.globals.patientLastName}}
+
   Visual Symptoms:
   -{{this.globals.observableSymptom}}
   -
+
   Complaint:
   -{{this.globals.questionSymptom}}
   -
-  -
+
   Test Results:
   -{{this.globals.testSymptom}}
   -
-  -
+  </textarea>
+  <textarea class="text" *ngIf="this.globals.showDiagnosisCheatSheet" readonly>
+  Diabetes:
+  -A blood disease that restricts the breakdown of glucose.
+  Common Symptoms:
+  -Patient is urinating very often.
+  -Patient may not be able to see as well as they normally do.
+  -Glucose levels in the blood are much higher than average.
+
+  Laryngitis:
+  -Swelling and inflamation of the larynx.
+  Common Symptoms:
+  -Voice sounds breathy, raspy, strained, or change in volume.
+  -Patient has a minor fever.
+  -Patient is constantly coughing.
+
+  Fibromyalgia:
+  -Musculoskeletal disorder affecting neurons in the brain.
+  Common Symptoms:
+  -Head hurts constantly.
+  -Patient has an irritable colon.
+  -Patient has stiff muscles.
+
+  Leukemia:
+  -Cancer of the blood-forming tissue in the body.
+  Common Symptoms:
+  -Patient is frequently getting infected
+  -Patient is experiencing unusual bleeding
+  -Skin is unusually pale
+
+  Malaria:
+  -Mosquito-borne disease caused by a parasite.
+  Common Symptoms:
+  -Patient has vomiting episodes
+  -Patient has loose or watery bowel movements
+  -Patient suffers of pain in the muscles
+
+  Motor Neuron Disease:
+  -Disease that affects the nerves in the brain and spinal cord.
+  Common Symptoms:
+  -Patient will drag his leg when walking
+  -Patient has difficulty holding onto objects
+  -Patient slurs their words when talking
   </textarea>
 </div>
