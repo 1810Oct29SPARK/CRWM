@@ -29,19 +29,19 @@ public class LoginController {
 		return "forward:/static/staticLogin.html";
 	}
 
-	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@PostMapping(value = "/auth", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public String handleForm(@RequestBody MultiValueMap<String, String> formParams, Model m) {
 		System.out.println("form params recieved: " + formParams);
 
-		Player cred = autherize.isValidUser(formParams.getFirst("username"), formParams.getFirst("password"));
+		Player cred = autherize.isValidUser(formParams.getFirst("login-username"), formParams.getFirst("login-password"));
 		if (cred == null) {
-			return "error";
+			return "redirect:http://localhost:4200";
 		} else {
 			m.addAttribute("username", cred.getUsername());
 			m.addAttribute("score", cred.getScore());
 			
 			//m.addAttribute("pname", )
-			return "profile";
+			return "redirect:http://localhost:4200/game";
 		}
 		
 	}
