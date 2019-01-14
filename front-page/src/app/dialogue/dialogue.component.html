@@ -1,3 +1,19 @@
-<p>
-  dialogue works!
-</p>
+<div class="text" readonly>
+  <p  id="dialoguetext"></p>
+  <p *ngIf="this.beginGame"><app-thankyoubutton></app-thankyoubutton></p>
+  <p id="introPatient"></p>
+  <p class="patientDialogue" id="patientGreeting"></p>
+  <p class="userDialogue" id="userGreeting"></p>
+  <p *ngIf="this.globals.whichTestButton1"><app-observebutton></app-observebutton> OR <app-question-button></app-question-button> OR <app-testbutton></app-testbutton></p>
+  <p class="userDialogue" id="observation"></p>
+  <p class="userThoughts" id="observationConclusion"></p>
+  <p *ngIf="this.globals.whichTestButton2"><app-observebutton></app-observebutton> OR <app-question-button></app-question-button> OR <app-testbutton></app-testbutton></p>
+  <p class="userDialogue" id="question"></p>
+  <p class="patientDialogue" id="questionResponse"></p>
+  <p *ngIf="this.globals.whichTestButton3"><app-observebutton></app-observebutton> OR <app-question-button></app-question-button> OR <app-testbutton></app-testbutton></p>
+  <p class="userDialogue" id="test"></p>
+  <p class="userThoughts" id="testResults"></p>
+  <p *ngIf="this.globals.showDiseaseOptions"><app-diabetesbutton></app-diabetesbutton> OR <app-fibromyalgiabutton></app-fibromyalgiabutton> OR <app-malariabutton></app-malariabutton>
+  <app-laryngitisbutton></app-laryngitisbutton> OR <app-motorneuronbutton></app-motorneuronbutton> OR <app-leukemiabutton></app-leukemiabutton></p>
+  <p id="rightOrWrong"></p>
+</div>

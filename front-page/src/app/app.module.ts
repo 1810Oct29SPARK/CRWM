@@ -6,6 +6,7 @@
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,18 @@ import { ClipboardComponent } from './clipboard/clipboard.component';
 import { LoginComponent } from './login/login.component';
 import { Globals } from './global';
 import { GamePageComponent } from './game-page/game-page.component';
+import { ThankyoubuttonComponent } from './thankyoubutton/thankyoubutton.component';
+import { WrongHospitalButtonComponent } from './wrong-hospital-button/wrong-hospital-button.component';
+import { ObservebuttonComponent } from './observebutton/observebutton.component';
+import { TestbuttonComponent } from './testbutton/testbutton.component';
+import { QuestionButtonComponent } from './question-button/question-button.component';
+import { DiagnosebuttonComponent } from './diagnosebutton/diagnosebutton.component';
+import { DiabetesbuttonComponent } from './diabetesbutton/diabetesbutton.component';
+import { LeukemiabuttonComponent } from './leukemiabutton/leukemiabutton.component';
+import { MalariabuttonComponent } from './malariabutton/malariabutton.component';
+import { LaryngitisbuttonComponent } from './laryngitisbutton/laryngitisbutton.component';
+import { FibromyalgiabuttonComponent } from './fibromyalgiabutton/fibromyalgiabutton.component';
+import { MotorneuronbuttonComponent } from './motorneuronbutton/motorneuronbutton.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +36,26 @@ import { GamePageComponent } from './game-page/game-page.component';
     VitalsComponent,
     ClipboardComponent,
     LoginComponent,
-    GamePageComponent
+    GamePageComponent,
+    ThankyoubuttonComponent,
+    WrongHospitalButtonComponent,
+    ObservebuttonComponent,
+    TestbuttonComponent,
+    QuestionButtonComponent,
+    DiagnosebuttonComponent,
+    DiabetesbuttonComponent,
+    LeukemiabuttonComponent,
+    MalariabuttonComponent,
+    LaryngitisbuttonComponent,
+    FibromyalgiabuttonComponent,
+    MotorneuronbuttonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [Globals],
+  providers: [Globals, ThankyoubuttonComponent, ClipboardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

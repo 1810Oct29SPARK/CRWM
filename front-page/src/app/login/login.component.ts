@@ -5,6 +5,7 @@ on what is clicked*/
 
 import { Component, OnInit,Inject } from '@angular/core';
 import { Globals } from '../global';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +13,12 @@ import { Globals } from '../global';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private globals:Globals) {
+  constructor(private globals:Globals, public http:HttpClient) {
    }
 
   ngOnInit() {
   }
-
-//   $('.message a').click(function () {
-//     $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
-// });
-
+  login(username:string,password:string){
+   this.http.get(`http://localhost:9999/MedicalRPG/login/`)
+  }
 }

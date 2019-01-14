@@ -1,11 +1,12 @@
 package com.rev.daoimpl;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Service;
 
 import com.rev.beans.Player;
 import com.rev.dao.PlayerDao;
@@ -16,7 +17,7 @@ import com.rev.util.HibernateUtil;
  * @author Max
  *
  */
-
+@Service(value="PlayerDao")
 public class PlayerDaoImpl implements PlayerDao {
 
 	// Session factory to obtain session
@@ -62,6 +63,18 @@ public class PlayerDaoImpl implements PlayerDao {
 			s.close();
 		}
 		return players;
+	}
+	
+	@Override
+	public List<Player> getPlayersByHighScore() {
+		List<Player> lp = new ArrayList<>();
+		try (Session s = sf.getCurrentSession()) {
+			Transaction tx = s.beginTransaction();
+			lp = s.createQuery("from Player order by score desc").getResultList();
+			tx.commit();
+			s.close();
+		}
+		return lp;
 	}
 
 	/**

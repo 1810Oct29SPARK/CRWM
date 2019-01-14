@@ -4,3 +4,11 @@
     margin-left:28.5%;
     float:center;
 }
+
+.userButton{
+    background-color:black;
+    border:none;
+    color:green;
+    font-size:18px;
+    height:20px;
+}

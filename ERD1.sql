@@ -196,3 +196,6 @@ INSERT INTO DISEASE_SYMPTOMS (DISEASE_ID, SYMPTOM_ID) VALUES (5, 15);
 
 -- Had to drop the table Patient because it was created by mistake when connecting the database to hibernate code
 DROP TABLE PATIENT;
+
+-- Creating a column named "IS_DIALOGUE" to allow a symptom to be accessed through the dialogue option in-game
+ALTER TABLE SYMPTOMS ADD IS_DIALOGUE VARCHAR(10);

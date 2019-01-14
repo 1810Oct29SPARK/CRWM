@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link href="LoginStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form action="/MedicalPRG/login" method="post" class="register-form">
+                <input type="text" placeholder="username" required  />
+                <input type="email" placeholder="email" required />
+                <input type="password" placeholder="newpassword" pattern="" required />
+                <input type="password" placeholder="confirmpassword" pattern="" required />
+                <br />
+                <button>Get Started</button>
+                <p class="message">Already Registered<a href="#"> Login</a></p>
+            </form>
+            <form action="/MedicalRPG/login" method="post" class="login-form">
+                <input type="text" placeholder="username" required name="username"/>
+                <input type="password" placeholder="password" required name="password"/>
+                <br />
+                <button>Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $('.message a').click(function () {
+            $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+        });
+    </script>
+</body>
+</html>
