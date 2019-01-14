@@ -1,14 +1,19 @@
 package com.rev.main;
 
+import java.util.Random;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.rev.beans.Player;
+import com.rev.dao.DiseaseDao;
 import com.rev.dao.PatientsDao;
 import com.rev.dao.PlayerDao;
+import com.rev.daoimpl.DiseaseDaoImpl;
 import com.rev.daoimpl.PatientsDaoImpl;
 import com.rev.daoimpl.PlayerDaoImpl;
+import com.rev.service.DiseaseService;
 import com.rev.util.HibernateUtil;
 
 public class Driver {
@@ -20,7 +25,7 @@ public class Driver {
 		
 		//Player
 		PlayerDao pd = new PlayerDaoImpl();
-//		System.out.println(use.getallPlayers());
+//		System.out.println(pd.getallPlayers());
 //		System.out.println(pd.getPlayerByID(10200));
 //		System.out.println(pd.getPlayersByHighScore());
 		
@@ -30,6 +35,13 @@ public class Driver {
 //		System.out.println(pat.getAllPatients());
 
 //		funWithSessions(sf);
+		//Disease
+		DiseaseDao dd = new DiseaseDaoImpl();
+		DiseaseService ds = new DiseaseService();
+		Random r = new Random();
+		int n = r.nextInt(6) + 1;
+		System.out.println(ds.getDiseasebyID(n));
+
 	}
 	static void funWithSessions(SessionFactory sf) {
 		Session s = sf.getCurrentSession();
