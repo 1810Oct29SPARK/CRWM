@@ -30,6 +30,7 @@ import { FibromyalgiabuttonComponent } from './fibromyalgiabutton/fibromyalgiabu
 import { MotorneuronbuttonComponent } from './motorneuronbutton/motorneuronbutton.component';
 import { PlayerPageComponent } from './player-page/player-page.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { DevprofileComponent } from './devprofile/devprofile.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     MotorneuronbuttonComponent,
     PlayerPageComponent,
     LeaderboardComponent,
+    DevprofileComponent,
   ],
   imports: [
     BrowserModule,

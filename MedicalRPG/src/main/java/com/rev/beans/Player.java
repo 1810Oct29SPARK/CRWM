@@ -19,9 +19,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PLAYER")
 public class Player {
-	
 	public Player() {
-		super();
+
 	}
 
 	public Player(int player_ID, String username, String password, int score, String firstname, String lastname,
@@ -34,6 +33,13 @@ public class Player {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.isdev = isdev;
+	}
+	
+	//proxy for lazy fetch
+	public Player(String username, int score) {
+		super();
+		this.username = username;
+		this.score = score;
 	}
 
 	@Id
