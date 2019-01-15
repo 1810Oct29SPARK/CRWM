@@ -29,6 +29,7 @@ import { LaryngitisbuttonComponent } from './laryngitisbutton/laryngitisbutton.c
 import { FibromyalgiabuttonComponent } from './fibromyalgiabutton/fibromyalgiabutton.component';
 import { MotorneuronbuttonComponent } from './motorneuronbutton/motorneuronbutton.component';
 import { PlayerPageComponent } from './player-page/player-page.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { DevprofileComponent } from './devprofile/devprofile.component';
 
 @NgModule({
@@ -52,6 +53,7 @@ import { DevprofileComponent } from './devprofile/devprofile.component';
     FibromyalgiabuttonComponent,
     MotorneuronbuttonComponent,
     PlayerPageComponent,
+    LeaderboardComponent,
     DevprofileComponent,
   ],
   imports: [
