@@ -1,3 +1,4 @@
+
 <!--@author Max Couch, Jake Mulrenin-->
 <!-- code below will style a form for user to login / register.
 This also holds the router information when you submit the form that 
@@ -6,17 +7,17 @@ will change the view to the game page-->
 <!-- http://warpdoor.com/content/images/2014/May/25931-shot2.jpg -->
 <div class="login-page">
     <div class="form">
-        <form action="/game" method="get" class="register-form">
+        <form action="http://localhost:9999/MedicalRPG/add" method="post" class="register-form">
           <h2 style="color:white; font-size:50px; float:center">Register</h2>
             <span>
-            <input type="text" placeholder="username" required/>
-            <input type="email" placeholder="email" required />
+            <input type="text" placeholder="username" name="username" required/>
+            <input type="password" placeholder="password" name="password" required/>
             </span>
             <br>
             <br>
             <span>
-            <input type="password" placeholder="newpassword"  required/>
-            <input type="password" placeholder="confirmpassword"  required />
+            <input type="text" placeholder="firstname" name="firstname" required/>
+            <input type="text" placeholder="lastname" name="lastname" required/>
             </span>
             <br />
             <br>
@@ -34,10 +35,3 @@ will change the view to the game page-->
         </form>
     </div>
 </div>
-<!-- <script src="../js/Login.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-    $('.message a').click(function () {
-        $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
-    });
-</script> -->

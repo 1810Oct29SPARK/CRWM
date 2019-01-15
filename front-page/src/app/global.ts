@@ -32,8 +32,10 @@ export class Globals{
     showNewPatient:boolean = false;
     restartTheGame:boolean = false;
     beginGame:boolean = false;
-    showNewPatientButton = false;
-    
+    showNewPatientButton:boolean = false;
+    testButtonOn:boolean = true;
+    questionButtonOn:boolean = true;
+
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));
       }
@@ -74,5 +76,7 @@ export class Globals{
         this.observableSymptom = '';
         this.questionSymptom = '';
         this.testSymptom = '';
+        this.testButtonOn = true;
+        this.questionButtonOn = true;
       }
 }

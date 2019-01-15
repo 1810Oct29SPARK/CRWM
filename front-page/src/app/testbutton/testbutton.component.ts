@@ -29,6 +29,7 @@ export class TestbuttonComponent implements OnInit {
       this.globals.sleep(4000).then(() => {document.getElementById("testResults").innerHTML = "> The " + this.globals.whichTest + " results have come back positive for " + this.globals.testSymptom});
     }
     this.globals.health -= 40;
+    this.globals.testButtonOn = false;
   }
 
 }
