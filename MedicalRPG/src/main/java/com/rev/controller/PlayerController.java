@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,6 +30,7 @@ import com.rev.beans.Player;
 import com.rev.service.PlayerService;
 
 @Controller
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PlayerController {
 	@Autowired
 	private PlayerService playerservices;

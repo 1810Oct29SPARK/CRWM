@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../models/player.model';
 import { HttpClient } from '@angular/common/http';
+import { Globals } from '../global';
 
 @Component({
   selector: 'app-player-page',
@@ -9,9 +10,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlayerPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public globals:Globals) { }
 
   ngOnInit() {
+    this.globals.loadLeaderboard();
+    console.log(this.globals.highScoreData);
   }
 
 }

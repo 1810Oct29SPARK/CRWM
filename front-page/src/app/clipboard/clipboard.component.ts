@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class ClipboardComponent implements OnInit {
   patientFirstName;
   patientLastName;
-  constructor(private globals:Globals, public http: HttpClient) { }
+  constructor(public globals:Globals, public http: HttpClient) { }
   ngOnInit(){
   }
 

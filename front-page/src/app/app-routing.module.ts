@@ -9,8 +9,12 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'game', component: GamePageComponent},
+<<<<<<< HEAD
+  {path: 'playerPage', component: PlayerPageComponent}
+=======
   {path: 'devprofile', component: DevprofileComponent},
   {path: 'player', component: PlayerPageComponent}
+>>>>>>> 388eeff2205c72bdfd73cd963e0c3e814a52751a
 ];
 
 @NgModule({
