@@ -113,10 +113,18 @@ public class PlayerController {
 		System.out.println(play);
 		return "redirect:http://localhost:4200/login";
 	}
-	@DeleteMapping(value = "/delete",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@PostMapping(value = "/delete",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
-	public String deletePlayer(@RequestBody String username,Model m) {
-		playerservices.removePlayer(playerservices.findPlayer(username));
-		return "redirect:http://localhost:4200/profile";
+	public String deletePlayer(@RequestParam String username, Model m) {
+		System.out.println("form params recieved: " + username);
+		Player play = playerservices.findPlayer(username);
+		System.out.println(play);
+		if(play == null)
+		{
+			return "redirect:http://localhost:4200/devprofile";
+		}else {
+		playerservices.removePlayer(play);
+		return "redirect:http://localhost:4200/login";
+		}
 	}
 }
