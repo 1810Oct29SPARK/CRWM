@@ -1,0 +1,12 @@
+body { 
+    background: black;
+}
+.fullpage{
+    display:flex;
+    flex-direction:row;
+    float:center;
+    margin:auto;
+    border:3px solid white;
+    height:100vh;
+    width:75vw;
+}
