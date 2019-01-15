@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -102,14 +103,14 @@ public class PlayerController {
 	}
 	@PutMapping(value = "/score",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
-	public String updatePlayer(@RequestParam int score, @RequestParam String username,Model m)
+	public String updateScore( @RequestParam MultiValueMap<String,String> formparam, Model m)
 	{	
-		
-		Player play = new Player(playerservices.findPlayer(username).getPlayer_ID(),playerservices.findPlayer(username).getUsername(),
-				playerservices.findPlayer(username).getPassword(),score,
-				playerservices.findPlayer(username).getFirstname(),playerservices.findPlayer(username).getLastname(), playerservices.findPlayer(username).getIsdev());
+		System.out.println("form params recieved: " + formparam);
+		int s = Integer.parseInt(formparam.getFirst("score"));
+		Player play = playerservices.findPlayer(formparam.getFirst("username"));
+		play.setScore(s);
 		playerservices.updatePlayer(play);
-		
+		System.out.println(play);
 		return "redirect:http://localhost:4200/login";
 	}
 	@DeleteMapping(value = "/delete",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
