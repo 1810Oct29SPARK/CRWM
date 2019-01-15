@@ -100,10 +100,16 @@ public class PlayerController {
 			return "redirect:http://localhost:4200/game";
 		}
 	}
-	@PutMapping(value = "/update",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@PutMapping(value = "/score",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
-	public String updatePlayer(@RequestParam String score,Model m)
+	public String updatePlayer(@RequestParam int score, @RequestParam String username,Model m)
 	{	
+		
+		Player play = new Player(playerservices.findPlayer(username).getPlayer_ID(),playerservices.findPlayer(username).getUsername(),
+				playerservices.findPlayer(username).getPassword(),score,
+				playerservices.findPlayer(username).getFirstname(),playerservices.findPlayer(username).getLastname(), playerservices.findPlayer(username).getIsdev());
+		playerservices.updatePlayer(play);
+		
 		return "redirect:http://localhost:4200/login";
 	}
 	@DeleteMapping(value = "/delete",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
