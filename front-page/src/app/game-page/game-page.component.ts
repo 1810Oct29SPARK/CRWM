@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Patient } from '../models/patient.model';
+import { ActivatedRoute } from '@angular/router';
 import { Globals } from '../global';
 @Component({
   selector: 'app-game-page',
@@ -10,7 +10,7 @@ import { Globals } from '../global';
 export class GamePageComponent implements OnInit {
   data;
   id:number;
-  constructor(public globals: Globals, public http: HttpClient) { }
+  constructor(public globals: Globals, public http: HttpClient, public activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.globals.patientFirstName = '';
@@ -32,5 +32,11 @@ export class GamePageComponent implements OnInit {
     this.globals.showNewPatient = false;
     this.globals.restartTheGame = false;
     this.globals.numPatients = 0;
+    this.loadUsername();
+  }
+
+  loadUsername(){
+          this.globals.username = this.activatedRoute.snapshot.queryParams.username;
+          console.log(this.globals.username);
   }
 }
