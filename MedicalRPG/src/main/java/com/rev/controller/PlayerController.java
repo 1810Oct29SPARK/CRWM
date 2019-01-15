@@ -2,26 +2,32 @@ package com.rev.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.rev.beans.Player;
 import com.rev.service.PlayerService;
 
-@RestController
-@RequestMapping("/player")
+@Controller
 public class PlayerController {
 	@Autowired
 	private PlayerService playerservices;
@@ -37,7 +43,7 @@ public class PlayerController {
 		return new ResponseEntity<>(playerservices.getPlayersByHighScore(), HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "player/{id}")
 	// @ResponseBody
 	public ResponseEntity<Player> getPlayerbyID(@PathVariable int id) {
 		Player p = playerservices.getPlayer(id);
@@ -48,42 +54,42 @@ public class PlayerController {
 		}
 	}
 
-	@PostMapping(value = "/add")
-	// @ResponseBody
-	public ResponseEntity<String> addPlayer(@RequestBody Player player) {
-		ResponseEntity<String> resp = null;
-		try {
-			playerservices.addPlayer(player);
-			resp = new ResponseEntity<>("You Have Now Registered", HttpStatus.OK);
-		} catch (Exception e) {
-			resp = new ResponseEntity<>("Failed to register try again", HttpStatus.BAD_REQUEST);
+	@PostMapping(value="/add",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public String addPlayer(@RequestParam String username,@RequestParam String password,
+			@RequestParam String firstname,@RequestParam String lastname,Model m)
+	{		
+		if(username == null|| password == null||firstname== null||lastname ==null)
+		{
+			return "redirect:http://localhost:4200/login";
 		}
-		return resp;
+		else
+		{
+			System.out.println(username+password+firstname+lastname);
+			Player play = new Player(1,username,password, 0, firstname, lastname, "false");
+			playerservices.addPlayer(play);
+			m.addAttribute("firstname",firstname);
+			m.addAttribute("lastname", lastname);
+			m.addAttribute("username", username);
+			m.addAttribute("password", password);
+			m.addAttribute("score", play.getScore());
+			m.addAttribute("isdev", play.getIsdev());
+			return "redirect:http://localhost:4200/game";
+		}
+	
+	}
+	@PutMapping(value = "/update",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	// @ResponseBody
+	public String updatePlayer(@RequestParam String username,@RequestParam String password,
+			@RequestParam String firstname,@RequestParam String lastname,Model m)
+	{	
+
+		return  "redirect:http://localhost:4200/profile";
 	}
 
-	@PutMapping(value = "/update")
+	@DeleteMapping(value = "/delete",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
-	public ResponseEntity<String> updatePlayer(@RequestBody Player player) {
-		ResponseEntity<String> resp = null;
-		try {
-			playerservices.updatePlayer(player);
-			resp = new ResponseEntity<>("You Have Now Updated", HttpStatus.OK);
-		} catch (Exception e) {
-			resp = new ResponseEntity<>("Failed to update try again", HttpStatus.BAD_REQUEST);
-		}
-		return resp;
-	}
-
-	@DeleteMapping(value = "/delete")
-	// @ResponseBody
-	public ResponseEntity<String> deletePlayer(@RequestBody Player player) {
-		ResponseEntity<String> resp = null;
-		try {
-			playerservices.removePlayer(player);
-			resp = new ResponseEntity<>("You Have Deleted User", HttpStatus.OK);
-		} catch (Exception e) {
-			resp = new ResponseEntity<>("Failed to remove try again", HttpStatus.BAD_REQUEST);
-		}
-		return resp;
+	public String deletePlayer(@RequestBody String username,Model m) {
+		playerservices.removePlayer(playerservices.findPlayer(username));
+		return "redirect:http://localhost:4200/profile";
 	}
 }

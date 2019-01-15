@@ -8,6 +8,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.rev.beans.Player;
 import com.rev.service.LoginService;
@@ -34,15 +35,15 @@ public class LoginController {
 
 		Player cred = autherize.isValidUser(formParams.getFirst("login-username"), formParams.getFirst("login-password"));
 		if (cred == null) {
-			return "redirect:http://localhost:4200";
+			return "redirect:http://localhost:4200/login";
 		} else {
 			m.addAttribute("username", cred.getUsername());
+			m.addAttribute("password", cred.getPassword());
+			m.addAttribute("firstname", cred.getFirstname());
+			m.addAttribute("lastname", cred.getLastname());
 			m.addAttribute("score", cred.getScore());
-			
-			//m.addAttribute("pname", )
+			m.addAttribute("isdev", cred.getIsdev());
 			return "redirect:http://localhost:4200/game";
-		}
-		
+		}		
 	}
-
 }

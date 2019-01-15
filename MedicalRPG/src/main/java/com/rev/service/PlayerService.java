@@ -36,4 +36,7 @@ public class PlayerService {
 	public void updatePlayer(Player player) {
 		pdao.updatePlayer(player);
 	}
+	public Player findPlayer(String username) {
+		return pdao.findPlayerByUsername(username);
+	}
 }

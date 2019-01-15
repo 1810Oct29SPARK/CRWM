@@ -11,4 +11,5 @@ public interface PlayerDao {
 	public void updatePlayer(Player player);
 	public void addPlayer(Player player);
 	public void deletePlayer(Player player);
+	public Player findPlayerByUsername(String username);
 }
