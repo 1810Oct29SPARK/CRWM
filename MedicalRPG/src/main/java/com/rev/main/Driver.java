@@ -13,7 +13,6 @@ import com.rev.dao.PlayerDao;
 import com.rev.daoimpl.DiseaseDaoImpl;
 import com.rev.daoimpl.PatientsDaoImpl;
 import com.rev.daoimpl.PlayerDaoImpl;
-import com.rev.service.DiseaseService;
 import com.rev.util.HibernateUtil;
 
 public class Driver {

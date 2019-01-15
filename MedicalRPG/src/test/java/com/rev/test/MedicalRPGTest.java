@@ -31,7 +31,6 @@ public class MedicalRPGTest {
     private static final SymptomDao symptomDao = new SymptomDaoImpl();
     private static final DiseaseDao diseaseDao = new DiseaseDaoImpl();
     private static final PatientsDao patientsDao = new PatientsDaoImpl();
-    private static final LoginService auth = new LoginService();
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
     @Test
