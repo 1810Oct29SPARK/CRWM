@@ -1,6 +1,7 @@
 export class Profile {
     username: string;
-    bio: string;
-    image: string;
-    following: boolean;
+    password:string;
+    firstname:string;
+    lastname:string;
+    score:string;
   }

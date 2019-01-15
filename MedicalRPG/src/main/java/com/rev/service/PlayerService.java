@@ -37,6 +37,17 @@ public class PlayerService {
 		pdao.updatePlayer(player);
 	}
 	public Player findPlayer(String username) {
-		return pdao.findPlayerByUsername(username);
+		PlayerDaoImpl playin = new PlayerDaoImpl();
+		Player play = null;
+		List<Player> playList = playin.getallPlayers();
+		if (username != null) {
+			for (Player p : playList) {
+				if (username.equals(p.getUsername())) {
+					play = p;
+					return play;
+				}
+			}
+		}
+		return play;
 	}
 }

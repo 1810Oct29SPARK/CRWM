@@ -18,7 +18,4 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  login(username:string,password:string){
-   this.http.get(`http://localhost:9999/MedicalRPG/login/`)
-  }
 }
