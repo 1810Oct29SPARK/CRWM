@@ -67,6 +67,7 @@ public class PlayerController {
 		ResponseEntity<String> resp = null;
 		try {
 			playerservices.updatePlayer(player);
+			//use this to update player score
 			resp = new ResponseEntity<>("You Have Now Updated", HttpStatus.OK);
 		} catch (Exception e) {
 			resp = new ResponseEntity<>("Failed to update try again", HttpStatus.BAD_REQUEST);

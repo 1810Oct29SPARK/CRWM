@@ -28,20 +28,22 @@ public class Driver {
 //		System.out.println(pd.getallPlayers());
 //		System.out.println(pd.getPlayerByID(10200));
 //		System.out.println(pd.getPlayersByHighScore());
+//		Player p = new Player("doctorstrangelove", "yeet", "John", "Doe");
+//		pd.addPlayer(p);
 		
 		//Patient
 		PatientsDao pat = new PatientsDaoImpl();
 //		System.out.println(pat.getPatientsByID(1));
 //		System.out.println(pat.getAllPatients());
 
-//		funWithSessions(sf);
 		//Disease
 		DiseaseDao dd = new DiseaseDaoImpl();
-		DiseaseService ds = new DiseaseService();
-		Random r = new Random();
-		int n = r.nextInt(6) + 1;
-		System.out.println(ds.getDiseasebyID(n));
+//		DiseaseService ds = new DiseaseService();
+//		Random r = new Random();
+//		int n = r.nextInt(6) + 1;
+//		System.out.println(ds.getDiseasebyID(n));
 
+//		funWithSessions(sf);
 	}
 	static void funWithSessions(SessionFactory sf) {
 		Session s = sf.getCurrentSession();
