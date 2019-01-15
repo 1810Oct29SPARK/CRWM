@@ -76,11 +76,11 @@ public class PlayerController {
 			m.addAttribute("password", password);
 			m.addAttribute("score", play.getScore());
 			m.addAttribute("isdev", play.getIsdev());
-			return "redirect:http://localhost:4200/game";
+			return "redirect:http://localhost:4200/devprofile";
 		}
 	
 	}
-	@PutMapping(value = "/update",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@PostMapping(value = "/update",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
 	public String updatePlayer(@RequestParam String username,@RequestParam String password,
 			@RequestParam String firstname,@RequestParam String lastname,Model m)
@@ -103,7 +103,7 @@ public class PlayerController {
 			return "redirect:http://localhost:4200/game";
 		}
 	}
-	@PutMapping(value = "/score",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@PostMapping(value = "/score",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
 	public String updateScore( @RequestParam MultiValueMap<String,String> formparam, Model m)
 	{	
