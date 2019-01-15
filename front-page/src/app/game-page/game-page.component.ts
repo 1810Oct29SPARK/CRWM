@@ -31,5 +31,6 @@ export class GamePageComponent implements OnInit {
     this.globals.showDiseaseOptions = false;
     this.globals.showNewPatient = false;
     this.globals.restartTheGame = false;
+    this.globals.numPatients = 0;
   }
 }

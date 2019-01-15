@@ -16,6 +16,6 @@
   <p *ngIf="this.globals.showDiseaseOptions"><app-diabetesbutton></app-diabetesbutton> OR <app-fibromyalgiabutton></app-fibromyalgiabutton> OR <app-malariabutton></app-malariabutton>
   OR <app-laryngitisbutton></app-laryngitisbutton> OR <app-motorneuronbutton></app-motorneuronbutton> OR <app-leukemiabutton></app-leukemiabutton></p>
   <p id="rightOrWrong"></p>
-  <p *ngIf="this.globals.showNewPatientButton" id="newPatientButton"><button class="userButton" id="newPatientButton1" (click)="this.globals.restartGame()">Next Patient!</button>
-  </p>
+  <p *ngIf="this.globals.showNewPatientButton" id="newPatientButton"><button class="userButton" id="newPatientButton1" (click)="this.globals.restartGame()">Next Patient!</button></p>
+  <form action="http://localhost:9999/addscore" method="put" id="backToProfile"><button class="userButton" id="backtoLogin" *ngIf="this.globals.numPatients == 3">Back To Login</button></form>
 </div>

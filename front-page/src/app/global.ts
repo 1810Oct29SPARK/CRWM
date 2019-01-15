@@ -35,6 +35,7 @@ export class Globals{
     showNewPatientButton:boolean = false;
     testButtonOn:boolean = true;
     questionButtonOn:boolean = true;
+    numPatients:number = 0;
 
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));

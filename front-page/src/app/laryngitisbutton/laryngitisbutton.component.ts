@@ -23,5 +23,6 @@ export class LaryngitisbuttonComponent implements OnInit {
       document.getElementById("rightOrWrong").innerHTML = "You're diagnosis is incorrect! " + this.globals.health + " points awarded.";
     }
     this.globals.showNewPatientButton = true;
+    this.globals.numPatients++;
   }
 }
