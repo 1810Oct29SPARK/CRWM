@@ -44,6 +44,7 @@ public class PlayerService {
 			for (Player p : playList) {
 				if (username.equals(p.getUsername())) {
 					play = p;
+					System.out.println(play);
 					return play;
 				}
 			}
