@@ -33,7 +33,8 @@ public class LoginController {
 	public String handleForm(@RequestBody MultiValueMap<String, String> formParams, Model m) {
 		System.out.println("form params recieved: " + formParams);
 
-		Player cred = autherize.isValidUser(formParams.getFirst("login-username"), formParams.getFirst("login-password"));
+		Player cred = autherize.isValidUser(formParams.getFirst("login-username"),
+				formParams.getFirst("login-password"));
 		if (cred == null) {
 			return "redirect:http://localhost:4200/login";
 		} else {
@@ -43,7 +44,11 @@ public class LoginController {
 			m.addAttribute("lastname", cred.getLastname());
 			m.addAttribute("score", cred.getScore());
 			m.addAttribute("isdev", cred.getIsdev());
-			return "redirect:http://localhost:4200/playerPage";
-		}		
+			if (cred.getIsdev().equals("false")) {
+				return "redirect:http://localhost:4200/playerPage";
+			} else {
+				return "redirect:http://localhost:4200/devprofile";
+			}
+		}
 	}
 }

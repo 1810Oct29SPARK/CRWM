@@ -76,7 +76,7 @@ public class PlayerController {
 			m.addAttribute("password", password);
 			m.addAttribute("score", play.getScore());
 			m.addAttribute("isdev", play.getIsdev());
-			return "redirect:http://localhost:4200/devprofile";
+			return "redirect:http://localhost:4200/playerPage";
 		}
 	
 	}
