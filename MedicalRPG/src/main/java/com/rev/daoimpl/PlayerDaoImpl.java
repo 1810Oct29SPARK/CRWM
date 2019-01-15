@@ -135,4 +135,16 @@ public class PlayerDaoImpl implements PlayerDao {
 			s.close();
 		}
 	}
+
+	@Override
+	public Player findPlayerByUsername(String username) {
+		Player u = null;
+		try (Session s = sf.getCurrentSession()) {
+			Transaction tx = s.beginTransaction();
+			u = (Player) s.get(Player.class, username);
+			tx.commit();
+			s.close();
+		}
+		return u;
+	}
 }
