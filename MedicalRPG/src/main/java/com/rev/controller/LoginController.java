@@ -43,7 +43,7 @@ public class LoginController {
 			m.addAttribute("lastname", cred.getLastname());
 			m.addAttribute("score", cred.getScore());
 			m.addAttribute("isdev", cred.getIsdev());
-			return "redirect:http://localhost:4200/game";
+			return "redirect:http://localhost:4200/playerPage";
 		}		
 	}
 }

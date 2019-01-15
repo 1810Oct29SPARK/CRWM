@@ -36,6 +36,8 @@ export class Globals{
     testButtonOn:boolean = true;
     questionButtonOn:boolean = true;
     numPatients:number = 0;
+    highScoreData;
+    playerData;
 
     sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));
@@ -43,9 +45,20 @@ export class Globals{
       loadData(id:number){
         this.http.get(`http://localhost:9999/MedicalRPG/${id}`).subscribe(data => {
             this.data = data;
-            console.log(data);
         });
 
+      }
+
+      loadLeaderboard(){
+        this.http.get('http://localhost:9999/MedicalRPG/highscore').subscribe(data => {
+          this.highScoreData = data;
+        })
+      }
+
+      loadPlayer(id:number){
+        this.http.get('http://localhost:9999/MedicalRPG/player/${id}').subscribe(data =>{
+          this.playerData = data;
+        })
       }
     
       random(){

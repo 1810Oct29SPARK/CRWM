@@ -17,7 +17,6 @@ import { LoginComponent } from './login/login.component';
 import { Globals } from './global';
 import { GamePageComponent } from './game-page/game-page.component';
 import { ThankyoubuttonComponent } from './thankyoubutton/thankyoubutton.component';
-import { WrongHospitalButtonComponent } from './wrong-hospital-button/wrong-hospital-button.component';
 import { ObservebuttonComponent } from './observebutton/observebutton.component';
 import { TestbuttonComponent } from './testbutton/testbutton.component';
 import { QuestionButtonComponent } from './question-button/question-button.component';
@@ -31,6 +30,8 @@ import { MotorneuronbuttonComponent } from './motorneuronbutton/motorneuronbutto
 import { PlayerPageComponent } from './player-page/player-page.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { DevprofileComponent } from './devprofile/devprofile.component';
+import { PlayerInfoComponent } from './player-info/player-info.component';
+import { PlayButtonComponent } from './play-button/play-button.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,6 @@ import { DevprofileComponent } from './devprofile/devprofile.component';
     LoginComponent,
     GamePageComponent,
     ThankyoubuttonComponent,
-    WrongHospitalButtonComponent,
     ObservebuttonComponent,
     TestbuttonComponent,
     QuestionButtonComponent,
@@ -55,6 +55,8 @@ import { DevprofileComponent } from './devprofile/devprofile.component';
     PlayerPageComponent,
     LeaderboardComponent,
     DevprofileComponent,
+    PlayerInfoComponent,
+    PlayButtonComponent,
   ],
   imports: [
     BrowserModule,
