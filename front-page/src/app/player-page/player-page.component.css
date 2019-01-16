@@ -13,12 +13,18 @@ body {
     height:100vh;
     width:75vw;
 }
+.leftpage{
+    width: 50vw;
+    text-align: center;
+    position: relative;
+}
 .leaderboard{
-    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .playerInfo{
-    height:70vh;
-}
-.playButton{
-    height:30vh;
+    width:50vw;
+    /* text-align: center; */
 }
