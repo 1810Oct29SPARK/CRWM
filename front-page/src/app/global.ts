@@ -57,6 +57,12 @@ export class Globals {
     });
   }
 
+  loadPlayers() {
+    this.http.get('http://localhost:9999/MedicalRPG/players').subscribe(data => {
+      this.playerData = data;
+    });
+  }
+
   random() {
     return Math.floor(Math.random() * 3) + 1;
   }
