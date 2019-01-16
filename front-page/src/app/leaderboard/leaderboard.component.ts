@@ -8,7 +8,7 @@ import { Globals } from '../global';
 })
 export class LeaderboardComponent implements OnInit {
 
-  constructor(public globals:Globals) { }
+  constructor(public globals: Globals) { }
 
   highScoreData = this.globals.highScoreData;
 

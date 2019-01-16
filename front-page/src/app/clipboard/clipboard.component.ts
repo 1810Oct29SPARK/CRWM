@@ -10,14 +10,14 @@ import { HttpClient } from '@angular/common/http';
 export class ClipboardComponent implements OnInit {
   patientFirstName;
   patientLastName;
-  constructor(public globals:Globals, public http: HttpClient) { }
-  ngOnInit(){
+  constructor(public globals: Globals, public http: HttpClient) { }
+  ngOnInit() {
   }
 
-  toggleDiagnosis(){
-    if(this.globals.showDiagnosisCheatSheet == false){
-    this.globals.showDiagnosisCheatSheet = true;
-    }else{
+  toggleDiagnosis() {
+    if (this.globals.showDiagnosisCheatSheet == false) {
+      this.globals.showDiagnosisCheatSheet = true;
+    } else {
       this.globals.showDiagnosisCheatSheet = false;
     }
   }

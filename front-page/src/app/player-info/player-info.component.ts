@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from '../global';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-player-info',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public globals: Globals, public activatedRoute: ActivatedRoute) { }
+
+  playerData = this.globals.playerData;
 
   ngOnInit() {
+    this.loadPlayerData();
   }
 
+  loadPlayerData() {
+    this.globals.username = this.activatedRoute.snapshot.queryParams.username;
+    this.globals.playerFirstName = this.activatedRoute.snapshot.queryParams.firstname;
+    this.globals.playerLastName = this.activatedRoute.snapshot.queryParams.lastname;
+  }
 }
