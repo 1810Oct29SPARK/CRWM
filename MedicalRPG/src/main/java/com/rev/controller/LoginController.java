@@ -39,11 +39,11 @@ public class LoginController {
 			return "redirect:http://localhost:4200/login";
 		} else {
 			m.addAttribute("username", cred.getUsername());
-			m.addAttribute("password", cred.getPassword());
+//			m.addAttribute("password", cred.getPassword());
 			m.addAttribute("firstname", cred.getFirstname());
 			m.addAttribute("lastname", cred.getLastname());
 			m.addAttribute("score", cred.getScore());
-			m.addAttribute("isdev", cred.getIsdev());
+//			m.addAttribute("isdev", cred.getIsdev());
 			if (cred.getIsdev().equals("false")) {
 				return "redirect:http://localhost:4200/playerPage";
 			} else {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialogue',
@@ -9,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DialogueComponent implements OnInit {
 
-  constructor(private globals: Globals, public http: HttpClient) { }
+  constructor(private globals: Globals, public http: HttpClient, public route: Router) { }
   ngOnInit() {
     this.startGame();
   }
@@ -21,6 +22,8 @@ export class DialogueComponent implements OnInit {
       'score': newScore
     }).subscribe((result) => {
     });
+    // this.route.navigate(['/playerPage']);
+    
   }
 
   startGame() {

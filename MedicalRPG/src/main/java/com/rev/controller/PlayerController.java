@@ -33,8 +33,8 @@ public class PlayerController {
 	public ResponseEntity<List<Player>> getAllPlayers() {
 		return new ResponseEntity<>(playerservices.getAllPlayers(), HttpStatus.OK);
 	}
-	
-	@GetMapping(value="/highscore")
+
+	@GetMapping(value = "/highscore")
 	public ResponseEntity<List<Player>> getPlayersByHighScore() {
 		return new ResponseEntity<>(playerservices.getPlayersByHighScore(), HttpStatus.OK);
 	}
@@ -50,20 +50,16 @@ public class PlayerController {
 		}
 	}
 
-	@PostMapping(value="/add",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public String addPlayer(@RequestParam String username,@RequestParam String password,
-			@RequestParam String firstname,@RequestParam String lastname,Model m)
-	{		
-		if(username == null|| password == null||firstname== null||lastname ==null)
-		{
+	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public String addPlayer(@RequestParam String username, @RequestParam String password,
+			@RequestParam String firstname, @RequestParam String lastname, Model m) {
+		if (username == null || password == null || firstname == null || lastname == null) {
 			return "redirect:http://localhost:4200/login";
-		}
-		else
-		{
-			System.out.println(username+password+firstname+lastname);
-			Player play = new Player(1,username,password, 0, firstname, lastname, "false");
+		} else {
+			System.out.println(username + password + firstname + lastname);
+			Player play = new Player(1, username, password, 0, firstname, lastname, "false");
 			playerservices.addPlayer(play);
-			m.addAttribute("firstname",firstname);
+			m.addAttribute("firstname", firstname);
 			m.addAttribute("lastname", lastname);
 			m.addAttribute("username", username);
 			m.addAttribute("password", password);
@@ -71,27 +67,24 @@ public class PlayerController {
 			m.addAttribute("isdev", play.getIsdev());
 			return "redirect:http://localhost:4200/playerPage";
 		}
-	
+
 	}
-	@PostMapping(value = "/update",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+
+	@PostMapping(value = "/update", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
-	public String updatePlayer(@RequestParam String updateusername,@RequestParam String username,@RequestParam String password,
-			@RequestParam String firstname,@RequestParam String lastname,Model m)
-	{	
-		if(updateusername == null ||username == null|| password == null||firstname== null||lastname ==null)
-		{
+	public String updatePlayer(@RequestParam String updateusername, @RequestParam String username,
+			@RequestParam String password, @RequestParam String firstname, @RequestParam String lastname, Model m) {
+		if (updateusername == null || username == null || password == null || firstname == null || lastname == null) {
 			return "redirect:http://localhost:4200/devprofile";
-		}
-		else
-		{
-			System.out.println(username+password+firstname+lastname);
+		} else {
+			System.out.println(username + password + firstname + lastname);
 			Player play = playerservices.findPlayer(username);
 			play.setUsername(updateusername);
 			play.setFirstname(firstname);
 			play.setLastname(lastname);
 			play.setPassword(password);
 			playerservices.updatePlayer(play);
-			m.addAttribute("firstname",firstname);
+			m.addAttribute("firstname", firstname);
 			m.addAttribute("lastname", lastname);
 			m.addAttribute("username", username);
 			m.addAttribute("password", password);
@@ -104,10 +97,10 @@ public class PlayerController {
 			}
 		}
 	}
-	@PutMapping(value = "/score",consumes = "application/json")
+
+	@PutMapping(value = "/score", consumes = "application/json")
 	// @ResponseBody
-	public String updateScore( @RequestBody UsernameScore requestObject, Model m)
-	{	
+	public String updateScore(@RequestBody UsernameScore requestObject, Model m) {
 		int s = Integer.parseInt(requestObject.getScore());
 		String username = requestObject.getUsername().replace("\"", "");
 		Player play = playerservices.findPlayer(username);
@@ -115,28 +108,32 @@ public class PlayerController {
 			play.setScore(s);
 		}
 		playerservices.updatePlayer(play);
-		return "redirect:http://localhost:4200/login";
+		if (play.getIsdev().equals("true")) {
+			return "redirect:http://localhost:4200/devprofile";
+		} else {
+			return "redirect:http://localhost:4200/playerPage";
+		}
 	}
-	@PostMapping(value = "/delete",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+
+	@PostMapping(value = "/delete", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	// @ResponseBody
 	public String deletePlayer(@RequestParam String username, Model m) {
 		System.out.println("form params recieved: " + username);
 		Player play = playerservices.findPlayer(username);
 		System.out.println(play);
-		if(play == null)
-		{
+		if (play == null) {
 			return "redirect:http://localhost:4200/devprofile";
-		}else {
-		playerservices.removePlayer(play);
-		return "redirect:http://localhost:4200/login";
+		} else {
+			playerservices.removePlayer(play);
+			return "redirect:http://localhost:4200/login";
 		}
 	}
-	@PostMapping(value="/find", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public Player FindPlayer(@RequestParam String username, Model m)
-	{
+
+	@PostMapping(value = "/find", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public Player FindPlayer(@RequestParam String username, Model m) {
 		System.out.println("form param recieved: " + username);
 		Player play = playerservices.findPlayer(username);
 		return play;
-		
+
 	}
 }
