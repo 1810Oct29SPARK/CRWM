@@ -8,9 +8,7 @@
 <div class="fullpage">
     <div class="playerInfo">
       <br>
-      <br>
       <app-player-info></app-player-info>
-      <br>
       <br>
       <h3>Change your information:</h3>
       <form class="playerUpdate" action="http://localhost:9999/MedicalRPG/update" method="post">
@@ -41,6 +39,10 @@
         <input name="username" type="text" value="{{this.globals.username}}" required style="color:black;" hidden />
         <button>Delete</button>
       </form>
+      <br>
+      <br>
+      <h3>Back to home page:</h3>
+      <a href="/login"><button style="color:black;">Logout</button></a>
     </div>
   <div class="rightpage">
     <div class="leaderboard">
