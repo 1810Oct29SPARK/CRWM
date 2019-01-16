@@ -16,6 +16,9 @@ export class DevprofileComponent implements OnInit {
   }
   loadUsername(){
     this.globals.username = this.activatedRoute.snapshot.queryParams.username;
+    this.globals.playerFirstName = this.activatedRoute.snapshot.queryParams.firstname;
+    this.globals.playerLastName = this.activatedRoute.snapshot.queryParams.lastname;
     console.log(this.globals.username);
+    console.log(this.globals.playerFirstName);
 }
 }

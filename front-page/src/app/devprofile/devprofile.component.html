@@ -1,6 +1,5 @@
 <div class="profile">
   <div class="profile-info">
-    <app-player-info></app-player-info>
   </div>
   <div class="inform">
     <form action="http://localhost:9999/MedicalRPG/delete" method="post">
@@ -11,16 +10,16 @@
     <form action="http://localhost:9999/MedicalRPG/update" method="post">
       <input type="text" name="username" value={{this.globals.username}} required readonly hidden>
       <p>New Username</p>
-      <input type="text" name="updateusername" required>
+      <input type="text" name="updateusername" required placeholder={{this.globals.username}}>
       <br>
       <p>New Password</p>
       <input type="text" name="password" required>
       <br>
       <p>New First Name</p>
-      <input type="text" name="firstname" required>
+      <input type="text" name="firstname" required placeholder={{this.globals.playerFirstName}}>
       <br>
       <p>New Last Name</p>
-      <input type="text" name="lastname" required>
+      <input type="text" name="lastname" required placeholder={{this.globals.playerLastName}}>
       <br>
       <br>
       <button>Update</button>
