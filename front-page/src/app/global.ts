@@ -18,6 +18,7 @@ export class Globals {
   username: string;
   playerFirstName: string;
   playerLastName: string;
+  isDev:string;
   patientFirstName: string;
   patientLastName: string;
   observableSymptom: string;

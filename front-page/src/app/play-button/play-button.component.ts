@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Globals} from '../global';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-play-button',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayButtonComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public globals:Globals, public activatedRoute:ActivatedRoute) { }
+  
   ngOnInit() {
+    this.globals.isDev = this.activatedRoute.snapshot.queryParams.isDev;
   }
 
 }

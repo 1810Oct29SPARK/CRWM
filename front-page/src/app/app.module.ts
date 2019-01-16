@@ -33,6 +33,7 @@ import { DevprofileComponent } from './devprofile/devprofile.component';
 import { PlayerInfoComponent } from './player-info/player-info.component';
 import { PlayButtonComponent } from './play-button/play-button.component';
 import { AllPlayersComponent } from './all-players/all-players.component';
+import { ProfileButtonComponent } from './profile-button/profile-button.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AllPlayersComponent } from './all-players/all-players.component';
     PlayerInfoComponent,
     PlayButtonComponent,
     AllPlayersComponent,
+    ProfileButtonComponent,
   ],
   imports: [
     BrowserModule,
