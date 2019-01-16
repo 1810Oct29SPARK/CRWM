@@ -13,7 +13,7 @@ body {
     height:100vh;
     width:75vw;
 }
-.leftpage{
+.rightpage{
     width: 50vw;
     text-align: center;
     position: relative;
@@ -26,5 +26,5 @@ body {
 }
 .playerInfo{
     width:50vw;
-    /* text-align: center; */
+    margin-left: 15%;
 }
