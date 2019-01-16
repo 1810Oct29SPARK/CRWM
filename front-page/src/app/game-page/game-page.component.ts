@@ -32,7 +32,6 @@ export class GamePageComponent implements OnInit {
     this.globals.showNewPatient = false;
     this.globals.restartTheGame = false;
     this.globals.numPatients = 0;
-    this.loadUsername();
   }
 
   loadUsername(){
