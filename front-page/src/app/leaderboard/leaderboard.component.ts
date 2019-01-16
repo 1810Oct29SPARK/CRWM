@@ -1,3 +1,7 @@
+/**
+ * @author Max Couch
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 

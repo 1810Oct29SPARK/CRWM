@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from '../models/player.model';
-import { HttpClient } from '@angular/common/http';
 import { Globals } from '../global';
 
 @Component({

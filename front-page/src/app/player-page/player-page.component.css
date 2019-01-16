@@ -1,6 +1,12 @@
 body { 
     background: black;
 }
+.header{
+    display: flex;
+    flex-direction: row;
+    float: center;
+    margin: auto;
+}
 .fullpage{
     display:flex;
     flex-direction:row;
@@ -9,4 +15,13 @@ body {
     border:3px solid white;
     height:100vh;
     width:75vw;
+}
+.leaderboard{
+    width: 50%;
+}
+.playerInfo{
+    height:70vh;
+}
+.playButton{
+    height:30vh;
 }

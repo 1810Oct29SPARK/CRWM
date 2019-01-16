@@ -1,3 +1,8 @@
+/**
+ * @author Max Couch 
+ * */ 
+
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 import { ActivatedRoute } from '@angular/router';

@@ -1,4 +1,4 @@
-/*@author Jake Mulrenin */
+/*@author Jake Mulrenin, Max Couch */
 /*This global ts file defines the isOn variable that is used to 
 change the views depending on what is clicked on*/
 import { Injectable } from "@angular/core";
