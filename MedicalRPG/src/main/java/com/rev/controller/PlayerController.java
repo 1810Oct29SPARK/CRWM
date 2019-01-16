@@ -104,7 +104,11 @@ public class PlayerController {
 			m.addAttribute("password", password);
 			m.addAttribute("score", play.getScore());
 			m.addAttribute("isdev", play.getIsdev());
-			return "redirect:http://localhost:4200/devprofile";
+			if (play.getIsdev().equals("false")) {
+				return "redirect:http://localhost:4200/playerPage";
+			} else {
+				return "redirect:http://localhost:4200/devprofile";
+			}
 		}
 	}
 	@PostMapping(value = "/score",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)

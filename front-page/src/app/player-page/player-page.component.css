@@ -2,10 +2,7 @@ body {
     background: black;
 }
 .header{
-    display: flex;
-    flex-direction: row;
-    float: center;
-    margin: auto;
+    text-align: center;
 }
 .fullpage{
     display:flex;

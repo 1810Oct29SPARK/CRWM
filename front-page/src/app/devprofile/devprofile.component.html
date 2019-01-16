@@ -1,32 +1,31 @@
 <div class="profile">
-   <div class="profile-info">
+  <div class="profile-info">
     <app-player-info></app-player-info>
-   </div>
- <div class="inform">
+  </div>
+  <div class="inform">
     <form action="http://localhost:9999/MedicalRPG/delete" method="post">
-    <input name="username" type="text" placeholder="username" required style="color:black;"/>
-    <br>
-    <button >Delete</button>
-  </form>
-  <form action="http://localhost:9999/MedicalRPG/update" method="post">
-    <input type="text" name="username" value={{this.globals.username}} required readonly hidden >
-    <p>New Username</p>
-    <input type="text" name="updateusername" required >
-    <br>
-    <p>New Password</p>
-    <input type="text" name="password"required>
-    <br>
-    <p>New First Name</p>
-    <input type="text" name="firstname" required>
-    <br>
-    <p>New Last Name</p>
-    <input type="text" name="lastname"  required>
-    <br>
-    <br>
-    <button>Update</button>
-  </form>
-</div>
-<br>
+      <input name="username" type="text" placeholder="username" required style="color:black;" />
+      <br>
+      <button>Delete</button>
+    </form>
+    <form action="http://localhost:9999/MedicalRPG/update" method="post">
+      <input type="text" name="username" value={{this.globals.username}} required readonly hidden>
+      <p>New Username</p>
+      <input type="text" name="updateusername" required>
+      <br>
+      <p>New Password</p>
+      <input type="text" name="password" required>
+      <br>
+      <p>New First Name</p>
+      <input type="text" name="firstname" required>
+      <br>
+      <p>New Last Name</p>
+      <input type="text" name="lastname" required>
+      <br>
+      <br>
+      <button>Update</button>
+    </form>
+  </div>
+  <br>
   <app-play-button></app-play-button>
 </div>
-
