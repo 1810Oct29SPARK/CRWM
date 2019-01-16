@@ -18,8 +18,5 @@
   <p id="rightOrWrong"></p>
   <p *ngIf="this.globals.showNewPatientButton" id="newPatientButton"><button *ngIf="this.globals.numPatients < 3" class="userButton" id="newPatientButton1" (click)="this.globals.restartGame()">Next Patient!</button></p>
   <!--add to form {{this.globals.score}} and {{this.globals.username}} to send as form data-->
-  <form action="http://localhost:9999/MedicalRPG/score" method="post" id="backToProfile">
-    <input type="text" name="username" required>
-    <input type="text" name="score" required>
-    <button class="userButton" id="backtoLogin" *ngIf="this.globals.numPatients == 3">Back To Profile</button></form>
+    <button class="userButton" id="backtoLogin" *ngIf="this.globals.numPatients == 3" (click)="this.updateScore()">Submit Your Score</button>
 </div>

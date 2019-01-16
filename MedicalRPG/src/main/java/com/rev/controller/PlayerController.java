@@ -2,20 +2,14 @@ package com.rev.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.rev.beans.Player;
+import com.rev.beans.UsernameScore;
 import com.rev.service.PlayerService;
 
 @Controller
@@ -111,16 +104,17 @@ public class PlayerController {
 			}
 		}
 	}
-	@PostMapping(value = "/score",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	@PutMapping(value = "/score",consumes = "application/json")
 	// @ResponseBody
-	public String updateScore( @RequestParam MultiValueMap<String,String> formparam, Model m)
+	public String updateScore( @RequestBody UsernameScore requestObject, Model m)
 	{	
-		System.out.println("form params recieved: " + formparam);
-		int s = Integer.parseInt(formparam.getFirst("score"));
-		Player play = playerservices.findPlayer(formparam.getFirst("username"));
-		play.setScore(s);
+		int s = Integer.parseInt(requestObject.getScore());
+		String username = requestObject.getUsername().replace("\"", "");
+		Player play = playerservices.findPlayer(username);
+		if (s > play.getScore()) {
+			play.setScore(s);
+		}
 		playerservices.updatePlayer(play);
-		System.out.println(play);
 		return "redirect:http://localhost:4200/login";
 	}
 	@PostMapping(value = "/delete",consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
