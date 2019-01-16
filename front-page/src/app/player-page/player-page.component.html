@@ -1,0 +1,55 @@
+<!--
+  @author Max Couch, Jake Mulrenin
+-->
+
+<div class="header">
+  <h1>Player Page</h1>
+</div>
+<div class="fullpage">
+    <div class="playerInfo">
+      <br>
+      <app-player-info></app-player-info>
+      <br>
+      <h3>Change your information:</h3>
+      <form class="playerUpdate" action="http://localhost:9999/MedicalRPG/update" method="post">
+        <input type="text" name="username" value={{this.globals.username}} required readonly hidden>
+        <p>New Username</p>
+        <input type="text" name="updateusername" required style="color:black;" placeholder="{{this.globals.playerLastName}}">
+        <br>
+        <br>
+        <p>New Password</p>
+        <input type="text" name="password" required type="password" style="color:black;">
+        <br>
+        <br>
+        <p>New First Name</p>
+        <input type="text" name="firstname" required style="color:black;" placeholder="{{this.globals.playerFirstName}}">
+        <br>
+        <br>
+        <p>New Last Name</p>
+        <input type="text" name="lastname" required style="color:black;" placeholder="{{this.globals.playerLastName}}">
+        <br>
+        <br>
+        <button>Update</button>
+      </form>
+      <br>
+      <br>
+      <h4>Deactivate your account:</h4>
+      <h6>(We're sad to see you go)</h6>
+      <form action="http://localhost:9999/MedicalRPG/delete" method="post">
+        <input name="username" type="text" value="{{this.globals.username}}" required style="color:black;" hidden />
+        <button>Delete</button>
+      </form>
+      <br>
+      <br>
+      <h3>Back to home page:</h3>
+      <a href="/login"><button style="color:black;">Logout</button></a>
+    </div>
+  <div class="rightpage">
+    <div class="leaderboard">
+      <app-leaderboard></app-leaderboard>
+      <br>
+      <h1>Play the game:</h1>
+      <a routerLink="/game"><button id="button">PLAY</button></a>
+    </div>
+  </div>
+</div>

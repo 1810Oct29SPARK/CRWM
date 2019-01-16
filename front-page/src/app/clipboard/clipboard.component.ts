@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from '../global';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-clipboard',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clipboard.component.css']
 })
 export class ClipboardComponent implements OnInit {
-
-  constructor() { }
-
+  patientFirstName;
+  patientLastName;
+  constructor(public globals: Globals, public http: HttpClient) { }
   ngOnInit() {
   }
 
+  toggleDiagnosis() {
+    if (this.globals.showDiagnosisCheatSheet == false) {
+      this.globals.showDiagnosisCheatSheet = true;
+    } else {
+      this.globals.showDiagnosisCheatSheet = false;
+    }
+  }
 }
+
+

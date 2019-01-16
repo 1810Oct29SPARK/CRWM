@@ -6,6 +6,7 @@
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,23 @@ import { ClipboardComponent } from './clipboard/clipboard.component';
 import { LoginComponent } from './login/login.component';
 import { Globals } from './global';
 import { GamePageComponent } from './game-page/game-page.component';
+import { ThankyoubuttonComponent } from './thankyoubutton/thankyoubutton.component';
+import { ObservebuttonComponent } from './observebutton/observebutton.component';
+import { TestbuttonComponent } from './testbutton/testbutton.component';
+import { QuestionButtonComponent } from './question-button/question-button.component';
+import { DiagnosebuttonComponent } from './diagnosebutton/diagnosebutton.component';
+import { DiabetesbuttonComponent } from './diabetesbutton/diabetesbutton.component';
+import { LeukemiabuttonComponent } from './leukemiabutton/leukemiabutton.component';
+import { MalariabuttonComponent } from './malariabutton/malariabutton.component';
+import { LaryngitisbuttonComponent } from './laryngitisbutton/laryngitisbutton.component';
+import { FibromyalgiabuttonComponent } from './fibromyalgiabutton/fibromyalgiabutton.component';
+import { MotorneuronbuttonComponent } from './motorneuronbutton/motorneuronbutton.component';
+import { PlayerPageComponent } from './player-page/player-page.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { DevprofileComponent } from './devprofile/devprofile.component';
+import { PlayerInfoComponent } from './player-info/player-info.component';
+import { PlayButtonComponent } from './play-button/play-button.component';
+import { AllPlayersComponent } from './all-players/all-players.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +41,31 @@ import { GamePageComponent } from './game-page/game-page.component';
     VitalsComponent,
     ClipboardComponent,
     LoginComponent,
-    GamePageComponent
+    GamePageComponent,
+    ThankyoubuttonComponent,
+    ObservebuttonComponent,
+    TestbuttonComponent,
+    QuestionButtonComponent,
+    DiagnosebuttonComponent,
+    DiabetesbuttonComponent,
+    LeukemiabuttonComponent,
+    MalariabuttonComponent,
+    LaryngitisbuttonComponent,
+    FibromyalgiabuttonComponent,
+    MotorneuronbuttonComponent,
+    PlayerPageComponent,
+    LeaderboardComponent,
+    DevprofileComponent,
+    PlayerInfoComponent,
+    PlayButtonComponent,
+    AllPlayersComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [Globals],
+  providers: [Globals, ThankyoubuttonComponent, ClipboardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

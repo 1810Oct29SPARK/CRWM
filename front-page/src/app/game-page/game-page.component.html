@@ -1,6 +1,6 @@
-<div class="fullpage" style="background:black"><!--*ngIf="!this.globals.isOn"-->
+<div class="fullpage"><!--*ngIf="!this.globals.isOn"-->
   <div class="dialogue">
-    <router-outlet></router-outlet>
+    <app-dialogue></app-dialogue>
   </div>
   <div class="vitalsclipboard">
     <div class="vitals">
@@ -11,4 +11,4 @@
     </div>
   </div>
 </div>
-<a href="/login"><button style="margin-left:45vw; color:black;">View Login</button></a> <!--*ngIf="!this.globals.isOn"-->
+<a href="/login"><button style="margin-left:45vw; color:black;">Logout</button></a> <!--*ngIf="!this.globals.isOn"-->

@@ -2,7 +2,10 @@ package com.rev.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -15,13 +18,13 @@ import javax.persistence.Table;
 @Table(name="PATIENTS")
 public class Patients {
 
-	public Patients(int patient_ID, String first_Name, String last_Name, int age, int disease_ID) {
+	public Patients(int patient_ID, String first_Name, String last_Name, int age, Disease disease) {
 		super();
 		this.patient_ID = patient_ID;
 		this.first_Name = first_Name;
 		this.last_Name = last_Name;
 		this.age = age;
-		this.disease_ID = disease_ID;
+		this.disease = disease;
 	}
 	public Patients() {
 	
@@ -37,8 +40,9 @@ public class Patients {
 	private String last_Name;
 	@Column(name="AGE")
 	private int age;
-	@Column(name="DISEASE_ID")
-	private int disease_ID;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "DISEASE_ID")
+	private Disease disease;
 
 	public int getPatient_ID() {
 		return patient_ID;
@@ -64,24 +68,24 @@ public class Patients {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public int getDisease_ID() {
-		return disease_ID;
+	public Disease getDisease() {
+		return disease;
 	}
-	public void setDisease_ID(int disease_ID) {
-		this.disease_ID = disease_ID;
+	public void setDisease(Disease disease) {
+		this.disease = disease;
 	}
 	@Override
 	public String toString() {
 
 		return "Patients [patient_ID=" + patient_ID + ", first_Name=" + first_Name + ", last_Name=" + last_Name
-				+ ", age=" + age + ", disease_ID=" + disease_ID + "]";
+				+ ", age=" + age + ", disease=" + disease + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + age;
-		result = prime * result + disease_ID;
+		result = prime * result + ((disease == null) ? 0 : disease.hashCode());
 		result = prime * result + ((first_Name == null) ? 0 : first_Name.hashCode());
 		result = prime * result + ((last_Name == null) ? 0 : last_Name.hashCode());
 		result = prime * result + patient_ID;
@@ -98,7 +102,10 @@ public class Patients {
 		Patients other = (Patients) obj;
 		if (age != other.age)
 			return false;
-		if (disease_ID != other.disease_ID)
+		if (disease == null) {
+			if (other.disease != null)
+				return false;
+		} else if (!disease.equals(other.disease))
 			return false;
 		if (first_Name == null) {
 			if (other.first_Name != null)
@@ -114,6 +121,7 @@ public class Patients {
 			return false;
 		return true;
 	}
+	
 	
 	
 }
