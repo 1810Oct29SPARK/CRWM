@@ -12,7 +12,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.rev.beans.Credentials;
 import com.rev.beans.Disease;
 import com.rev.beans.Patients;
 import com.rev.beans.Player;

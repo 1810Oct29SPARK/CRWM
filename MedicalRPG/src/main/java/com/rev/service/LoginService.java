@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.rev.beans.Credentials;
 import com.rev.beans.Player;
 import com.rev.daoimpl.PlayerDaoImpl;
 
