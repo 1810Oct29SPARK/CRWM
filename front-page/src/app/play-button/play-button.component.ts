@@ -1,3 +1,9 @@
+/**
+ * @author Max Couch
+ */
+/*The play-button component grabs the isDev variable from the query parameters and loads 
+it into the isDev global variable. When the play button is clicked from the player 
+profile pages, the application will route to the game page view.*/
 import { Component, OnInit } from '@angular/core';
 import {Globals} from '../global';
 import { ActivatedRoute } from '@angular/router';

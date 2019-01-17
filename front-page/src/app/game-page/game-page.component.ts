@@ -1,6 +1,10 @@
 /**
  * @author Jake Mulrenin
  */
+/*The game page component holds the styling for the components on the game page. 
+Once the game page loads from the player page, all of the global variables are reset. 
+It also calls the global function load data to grab all necessary variables that 
+become available to the rest of the application through the globals.data variable.*/
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -36,10 +40,5 @@ export class GamePageComponent implements OnInit {
     this.globals.showNewPatient = false;
     this.globals.restartTheGame = false;
     this.globals.numPatients = 0;
-  }
-
-  loadUsername(){
-          this.globals.username = this.activatedRoute.snapshot.queryParams.username;
-          console.log(this.globals.username);
   }
 }

@@ -1,3 +1,13 @@
+/**
+ * @author Jake Mulrenin
+ */
+/*The diabetes button component shows the malaria disease option. When the button is clicked, 
+the function, checkDisease(), checks whether or not the chosen disease is correct or not.
+If the disease is correct, the current health is added to the player's score. If not,
+health is set to 0 and the score is not changed. It also increments the patient number 
+that is used to determine when the game is finished as well as displays the newpatient
+button.*/
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 

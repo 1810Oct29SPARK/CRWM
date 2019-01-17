@@ -1,7 +1,8 @@
 /**
  * @author Max Couch 
  * */ 
-
+/*The player-info component will grab the player name and username from the query 
+params and interpolates the values onto the page through a div element.*/
 
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';

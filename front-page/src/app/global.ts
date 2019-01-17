@@ -1,9 +1,13 @@
 /*@author Jake Mulrenin, Max Couch */
-/*This global ts file defines the isOn variable that is used to 
-change the views depending on what is clicked on*/
+/*This global service defines the global variables that are used to 
+change the views and display the interpolated variables that are used throughout 
+the application. The sleep function is used to slowly display dialogue based on 
+a millisecond amount given as a parameter to the function. The load data function 
+gets the object from the patient endpoint. The leaderboard function loads the 
+list of players in descending order based on their score. The random function will 
+randomly generate a number between 1 and 3 to randomly generate patients. */
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-
 
 @Injectable()
 export class Globals {

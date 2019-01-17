@@ -1,3 +1,11 @@
+/**
+ * @author Jake Mulrenin
+ */
+/*The test button is responsible for displaying the conversation following when 
+the player wants to "test" the patient. The function, testPatient(), checks
+which symptom is the testable one, along with its test type, and displays them to the dialogue page after a 
+series of dialogue. It also decrements the patients health by 40.*/
+
 import { Component, OnInit } from '@angular/core';
 import {Globals} from '../global';
 

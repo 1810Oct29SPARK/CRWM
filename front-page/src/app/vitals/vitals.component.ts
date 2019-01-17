@@ -1,5 +1,5 @@
-/*This ts file outlines the constructor for the vitals component
-on the game page*/
+/*The vitals component is responsible for displaying the vitals along with the patient's 
+current health.*/
 
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
@@ -13,7 +13,6 @@ export class VitalsComponent implements OnInit {
   constructor(public globals: Globals) { }
 
   ngOnInit() {
-    this.globals.sleep(10000);
   }
 
 }

@@ -1,8 +1,15 @@
+/**
+ * @author Jake Mulrenin
+ */
+/*The thankyou button is responsible for displaying the conversation following when 
+the player wants to start the game. The function, introducePatient(), loads the 
+patients name from the global data variable and interpolates it into the 
+conversation. The function also turns the thank you button to disabled after it is clicked 
+and will display the buttons that the player can choose to analyze the symptoms.*/
+
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from "@angular/core";
 import {Globals} from '../global';
-import {GamePageComponent} from '../game-page/game-page.component';
-import { injectRootLimpMode } from '@angular/core/src/di/injector_compatibility';
 
 @Injectable()
 @Component({

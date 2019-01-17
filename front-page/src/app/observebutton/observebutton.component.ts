@@ -1,3 +1,11 @@
+/**
+ * @author Jake Mulrenin
+ */
+/*The observe button is responsible for displaying the conversation following when 
+the player wants to "observe" the patient. The function, observePatient(), checks
+which symptom is the observable one and displays it to the dialogue page after a 
+series of dialogue. It also decrements the patients health by 10.*/
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 
@@ -14,7 +22,6 @@ export class ObservebuttonComponent implements OnInit {
   }
 
   observePatient(){
-
     for (var i = 0; i < 3; i++){
       if (this.globals.data.disease.symptom[i].is_Observable == 'yes'){
         this.globals.observableSymptom = this.globals.data.disease.symptom[i].symptom_Name;

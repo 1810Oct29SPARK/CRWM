@@ -1,3 +1,10 @@
+/**
+ * @author Max Couch
+ */
+/*This player-page component is responsible for supplying and styling the non-developer 
+profile page. It calls the loadLeaderboard() function when the view is displayed so 
+that the leaderboard can be populated.*/
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 
@@ -12,7 +19,6 @@ export class PlayerPageComponent implements OnInit {
 
   ngOnInit() {
     this.globals.loadLeaderboard();
-    console.log(this.globals.highScoreData);
   }
 
 }

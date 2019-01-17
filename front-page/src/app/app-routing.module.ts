@@ -1,6 +1,8 @@
 /**
  * @author Jake Mulrenin, Max Couch
  */
+/*The app-routing module is responsible for defining the endpoints that can be called 
+to change the display on the SPA.*/
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
