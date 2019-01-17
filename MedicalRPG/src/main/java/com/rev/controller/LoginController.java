@@ -31,11 +31,21 @@ public class LoginController {
 		this.autherize = loginService;
 	}
 	
+	/*
+	 * When you try to go to the site naturaly it should send you to an incorrect page
+	 */
 	@GetMapping(value = "/auth")
 	public String getStaticLogin(@RequestBody MultiValueMap<String, String> formParams, Model m) {	
 		return handleForm(formParams,m);
 	}
 
+	/*
+	 * This post method will take in the players username and password
+	 * then it will authenticate the credentials against the database
+	 * finaly we will send them to the angular proper profile page if the credentials are found
+	 * the model will take in the information from the found player thus giving us their information
+	 * if they are not it will return the user back to the login page
+	 */
 	@PostMapping(value = "/auth", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public String handleForm(@RequestBody MultiValueMap<String, String> formParams, Model m) {
 		System.out.println("form params recieved: " + formParams);
