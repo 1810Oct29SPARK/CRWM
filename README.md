@@ -1,7 +1,7 @@
 # CRWM
 Medical RPG
 
-Team: Rebecca, Jake, Darius, Max
+<h3>Authors: Rebecca, Jake, Darius, Max</h3>
 
 Welcome to Diagnosis.
 
