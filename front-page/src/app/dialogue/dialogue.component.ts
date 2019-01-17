@@ -17,10 +17,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./dialogue.component.css']
 })
 export class DialogueComponent implements OnInit {
-
+  scoreSubmitted:boolean = false;
   constructor(private globals: Globals, public http: HttpClient, public route: Router) { }
   ngOnInit() {
     this.startGame();
+    this.scoreSubmitted = false;
   }
 
   updateScore() {
@@ -29,9 +30,11 @@ export class DialogueComponent implements OnInit {
       'username': this.globals.username,
       'score': newScore
     }).subscribe((result) => {
+      
     });
+    document.getElementById("finalScore").innerHTML = "Your final score is: " + this.globals.score;
+    document.getElementById("submitSuccess").innerHTML = "Score has been submitted!";
     // this.route.navigate(['/playerPage']);
-    
   }
 
   startGame() {

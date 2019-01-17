@@ -23,4 +23,6 @@ the player clicks throughout the adventure.-->
   <p *ngIf="this.globals.showNewPatientButton" id="newPatientButton"><button *ngIf="this.globals.numPatients < 3" class="userButton" id="newPatientButton1" (click)="this.globals.restartGame()">Next Patient!</button></p>
   <!--add to form {{this.globals.score}} and {{this.globals.username}} to send as form data-->
     <button class="userButton" id="backtoLogin" *ngIf="this.globals.numPatients == 3" (click)="this.updateScore()">Submit Your Score</button>
+    <p class="dialoguetext" id="finalScore"></p>
+    <p class="dialoguetext" id="submitSuccess"></p>
 </div>

@@ -139,7 +139,7 @@ public class PlayerController {
 			play.setScore(s);
 		}
 		playerservices.updatePlayer(play);
-		return "redirect:http://localhost:4200/login";
+		return "forward:http://localhost:4200/login";
 	}
 
 	/*
