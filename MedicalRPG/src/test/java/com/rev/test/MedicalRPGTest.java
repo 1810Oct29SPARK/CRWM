@@ -73,14 +73,16 @@ public class MedicalRPGTest {
 	
 	/**
 	 * Creates a list of players that is filled with the players from the database.
-	 * Once full, an assertEquals checks whether the id of the 4th index of the list
-	 * = 10240, as it should.
 	 */
 	@Test
 	public void testGetAllPlayers() throws Exception {
 		List<Player> player = new ArrayList<>();
 		Mockito.lenient().when(playerDAO.getallPlayers()).thenReturn(player);
 	}
+	/**
+	 * Creates a list of players that is organized by the highscore 
+	 * @throws Exception
+	 */
 	@Test
 	public void testGetAllPlayersByHighScore() throws Exception {
 		List<Player> player = new ArrayList<>();
