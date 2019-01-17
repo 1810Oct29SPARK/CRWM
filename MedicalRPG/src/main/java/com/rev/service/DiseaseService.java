@@ -8,6 +8,17 @@ import com.rev.beans.Disease;
 import com.rev.dao.DiseaseDao;
 import com.rev.daoimpl.DiseaseDaoImpl;
 
+/**
+ * 
+ * @author Max Couch
+ * 
+ *         DiseaseService was originally unimplemented throughout most of the
+ *         development process, but became necessary when we randomized diseases
+ *         to patients. All normal CRUD methods were made in case there was a
+ *         necessity in future iterations.
+ *
+ */
+
 @Service(value = "diseaseService")
 public class DiseaseService {
 
