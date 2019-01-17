@@ -16,6 +16,12 @@ import com.rev.beans.Patients;
 import com.rev.service.DiseaseService;
 import com.rev.service.PatientService;
 
+/**
+ * Patient controller will take send information that coralates to the patient such as the disease
+ * This will return a random disease for a random player
+ * @author Darius
+ *
+ */
 @Controller
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PatientController {

@@ -22,12 +22,15 @@ public class DiseaseService {
 	}
 
 	public void updateDisease(Disease disease) {
+		dd.updateDisease(disease);
 	}
 
 	public void addDisease(Disease disease) {
+		dd.addDisease(disease);
 	}
 
 	public void deleteDisease(Disease disease) {
+		dd.deleteDisease(disease);
 	}
 
 }
