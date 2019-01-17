@@ -7,17 +7,19 @@
 	congif file. This file is invlaid if it conforms to the allowed elements 
 	to the listed in the DTD An Xml file can be well formed without being invalid. -->
 
+<!-- Using hibernate config to  -->
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibernate.connection.username">jmulrenin</property>
+		<!-- <property name="hibernate.connection.username">jmulrenin</property>
 		<property name="hibernate.connection.password">password</property>
 		<property name="hibernate.connection.url">jdbc:oracle:thin:@mulreninj-db.cohu8vxqabom.us-east-2.rds.amazonaws.com:1521:orcl</property>
-		<property name="hibernate.connection.driver_class">
+	-->	<property name="hibernate.connection.driver_class">
 			oracle.jdbc.driver.OracleDriver
 		</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- mapped our beans for hibernate -->
 		<mapping class="com.rev.beans.Player"></mapping>
 		<mapping class="com.rev.beans.Disease"></mapping>
 		<mapping class="com.rev.beans.Patients"></mapping>

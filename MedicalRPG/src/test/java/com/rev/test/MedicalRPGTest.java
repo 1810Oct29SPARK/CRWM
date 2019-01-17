@@ -31,6 +31,7 @@ import com.rev.service.LoginService;
 
 public class MedicalRPGTest {
 
+	//This rule will help us to keep clean tests
 	@Rule
 	public MockitoRule mockitoRule = MockitoJUnit.rule(); 
 	
@@ -88,10 +89,18 @@ public class MedicalRPGTest {
 		List<Player> player = new ArrayList<>();
 		Mockito.lenient().when(playerDAO.getPlayersByHighScore()).thenReturn(player);
 	}
+	/**
+	 * Creates a dummy player and checks the dummy
+	 * @throws Exception
+	 */
 	@Test
 	public void testCreatePlayer() throws Exception{
 		Mockito.lenient().doNothing().when(playerDAO).addPlayer(playerMock);
 	}
+	/**
+	 * Delete a dummy player from the list
+	 * @throws Exception
+	 */
 	@Test
 	public void testRemovePlayer() throws Exception{
 		Mockito.lenient().doNothing().when(playerDAO).deletePlayer(playerMock);

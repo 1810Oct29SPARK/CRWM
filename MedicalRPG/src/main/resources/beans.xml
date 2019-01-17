@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 	default-init-method="defaultInit"
 	default-destroy-method="defaultDestroy">
-
+	<!-- Mapping our beans to make them all into spring beans -->
 	<bean name="disease" class="com.rev.beans.Disease">
 
 	</bean>
