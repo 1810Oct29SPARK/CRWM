@@ -1,3 +1,7 @@
+<!--Each p tag in the dialogue html is responsible for displaying a certain section 
+of the game dialogue. The ngIf variables turn on and off depending on which buttons 
+the player clicks throughout the adventure.-->
+
 <div class="text" readonly>
   <p  id="dialoguetext"></p>
   <p *ngIf="this.globals.beginGame"><app-thankyoubutton></app-thankyoubutton></p>

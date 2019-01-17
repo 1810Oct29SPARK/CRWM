@@ -8,6 +8,11 @@ import com.rev.beans.Patients;
 import com.rev.dao.PatientsDao;
 import com.rev.daoimpl.PatientsDaoImpl;
 
+/**
+ * Patient services uses the Dao methods for patients
+ * @author Darius
+ *
+ */
 @Service(value = "patientService")
 public class PatientService {
 

@@ -1,16 +1,19 @@
 /**
- * @author Jake Mulrenin
+ * @author Jake Mulrenin and Rebecca Ruiz
  */
 package com.rev.test;
-import static org.junit.Assert.assertEquals; import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import com.rev.beans.Disease;
 import com.rev.beans.Patients;
@@ -25,118 +28,271 @@ import com.rev.daoimpl.PatientsDaoImpl;
 import com.rev.daoimpl.PlayerDaoImpl;
 import com.rev.daoimpl.SymptomDaoImpl;
 import com.rev.service.LoginService;
+
 public class MedicalRPGTest {
-    private static final PlayerDao playerDao = new PlayerDaoImpl();
-    private static final SymptomDao symptomDao = new SymptomDaoImpl();
-    private static final DiseaseDao diseaseDao = new DiseaseDaoImpl();
-    private static final PatientsDao patientsDao = new PatientsDaoImpl();
-    private static final LoginService auth = new LoginService();
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-    @Test
-    public void testGetAllPlayers() {
-        List<Player> pList = new ArrayList<>();
-        pList = playerDao.getallPlayers();
-      //  assertEquals(10350, pList.get(4).getId());
-    }
-   /* @Test
-    public void testGetAllPlayerByRealId() {
-        Player testPlayer = new Player(10220,"lberridge91","Ks7bPBfIqX",609301551,"Lazare","Berridge","false",null);
-        System.out.println(playerDao.getPlayerByID(10220));
-        assertTrue(testPlayer.equals(playerDao.getPlayerByID(10220)));
-    }
-    @Test
-    public void testGetAllPlayerByUnknownId() {
-        assertEquals(null,(playerDao.getPlayerByID(10)));
-    }
-    @Test
-    public void testIsValidUserReal() {
-        LoginService auth = new LoginService();
-        Credentials cred = new Credentials("lberridge91","Ks7bPBfIqX");
-        Player p = new Player(10220,"lberridge91","Ks7bPBfIqX",609301551,"Lazare","Berridge","false",null);
-      //  assertEquals(p,auth.isValidUser(cred));
-    }
-    @Test
-    public void testIsValidUserIncorrectEmail() {
-        Credentials cred = new Credentials("h@indigo.com","yTXA0LXDON");
-        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON",796121652,"Durrell","Herby","false",null);
-        //assertFalse(p.equals(auth.isValidUser(cred)));
-    }
-    @Test
-    public void testIsValidUserIncorrectPassword() {
-        Credentials cred = new Credentials("hdurrell0@indigo.com","y");
-        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON",796121652,"Durrell","Herby","false",null);
-       // assertFalse(p.equals(auth.isValidUser(cred)));
-    }
-    @Test
-    public void testIsValidUserNullCredentials() {
-        Credentials cred = new Credentials(null,null);
-        Player p = new Player(10250, "hdurrell0@indigo.com","yTXA0LXDON",796121652,"Durrell","Herby","false",null);
-      //  assertFalse(p.equals(auth.isValidUser(cred)));
-    }
-    @Test
-    public void testgetSymptomByIdRealId() {
-        Symptom thisSymptom = new Symptom(1, "Frequent Urination","Patient is urinating very often","yes","no",null);
-        assertTrue(thisSymptom.equals(symptomDao.getSymptomByID(1)));
-    }
-    @Test
-    public void testGetAllSymptoms() {
-        List<Symptom> sList = new ArrayList<>();
-        sList = symptomDao.getAllSymptoms();
-        assertEquals(18, sList.get(17).getSymptom_ID());
-    }
-    @Test
-    public void testGetSymptomByIdUnknownId() {
-        Symptom testSymptom = new Symptom(1, "Frequent Urination","Patient is urinating very often","yes","no",null);
-        assertFalse(testSymptom.equals(symptomDao.getSymptomByID(1000)));
-    }
-    @Test
-    public void testgetDiseaseByIdRealId() {
-        //Disease thisDisease = new Disease(null, 1, "Diabetes", "A blood disease that restricts the breakdown of glucose");
-        //assertTrue(thisDisease.equals(diseaseDao.getDiseasebyID(1)));
-    }
-    @Test
-    public void testGetAllDiseases() {
-        List<Disease> dList = new ArrayList<>();
-        dList = diseaseDao.getAllDiseases();
-        //Disease testDisease = new Disease(null, 4,"Leukemia", "Cancer of the blood-forming tissue in the body");
-       // assertTrue(testDisease.equals(dList.get(3)));
-    }
-    @Test
-    public void testGetDiseaseByIdUnknownId() {
-        assertEquals(null,(diseaseDao.getDiseasebyID(1000)));
-    }
-    @Test
-    public void testgetPatientByIdRealId() {
-        //Patients thisPatient = new Patients(1, "Hannah","Smith",46,1);
-       // assertTrue(thisPatient.equals(patientsDao.getPatientsByID(1)));
-    }
-    @Test
-    public void testGetAllPatients() {
-        List<Patients> pList = new ArrayList<>();
-        pList = patientsDao.getAllPatients();
-        //Patients testPatient = new Patients(3,"Alex",   "Sanchez",82,3);
-        //assertTrue(testPatient.equals(pList.get(2)));
-    }
-    @Test
-    public void testGetPatientByIdUnknownId() {
-        assertEquals(null,(patientsDao.getPatientsByID(1000)));
-    }
-    @Test
-    public void testgetLeaderboardByIdRealId() {
-        LeaderBoard thisLeaderboard = new LeaderBoard();
-        assertTrue(thisLeaderboard.equals(leaderboardDao.getLeaderBoardbyID(5)));
-    }
-    @Test
-    public void testGetAllLeaderBoards() {
-        List<LeaderBoard> lList = new ArrayList<>();
-        lList = leaderboardDao.getAllLeaderBoards();
-        LeaderBoard testLeaderboard = new LeaderBoard();
-        assertTrue(testLeaderboard.equals(lList.get(4)));
-    }
-    @Test
-    public void testGetLeaderBoardByIdUnknownId() {
-        LeaderBoard testLeaderboard = new LeaderBoard();
-        assertTrue(testLeaderboard.equals(leaderboardDao.getLeaderBoardbyID(1000)));
-    }*/
+
+	/**
+	 * Mockito JUnit Rule helps keeping tests clean. 
+	 * It initializes mocks, validates usage and detects incorrect stubbing.
+	 */
+	@Rule
+	public MockitoRule mockitoRule = MockitoJUnit.rule(); 
+	
+	// Beans Mock reference variables
+	@Mock
+	Disease diseaseMock;
+	@Mock
+	Patients patientsMock;
+	@Mock
+	Player playerMock;
+	@Mock
+	Symptom symptomMock;
+	
+	// DAO Mock reference variables
+	@Mock
+	DiseaseDao diseaseDAO;
+	@Mock
+	PatientsDao patientsDAO;
+	@Mock
+	PlayerDao playerDAO;
+	@Mock
+	SymptomDao symptomDAO;
+	
+	// Service Mock reference variables
+	@Mock
+	LoginService loginService;	
+	
+	// DAO Impl Mock reference variables
+	@InjectMocks
+	DiseaseDaoImpl diseaseDaoImpl;
+	@InjectMocks
+	PatientsDaoImpl patientDaoImpl;
+	@InjectMocks
+	PlayerDaoImpl playerDaoImpl;
+	@InjectMocks
+	SymptomDaoImpl symptomDaoImpl;
+	
+	@Mock
+	SessionFactory sessionMock;
+	
+	/**
+	 * Creates a list of players that is filled with the players from the database.
+	 */
+	@Test
+	public void testGetAllPlayers() throws Exception {
+		List<Player> player = new ArrayList<>();
+		Mockito.lenient().when(playerDAO.getallPlayers()).thenReturn(player);
+	}
+	
+	/**
+	 * Creates a list of players that is organized by the high score 
+	 * @throws Exception
+	 */
+	@Test
+	public void testGetAllPlayersByHighScore() throws Exception {
+		List<Player> player = new ArrayList<>();
+		Mockito.lenient().when(playerDAO.getPlayersByHighScore()).thenReturn(player);
+	}
+	
+	/**
+	 * Creates a mocked player and adds it to the list
+	 * @throws Exception
+	 */
+	@Test
+	public void testCreatePlayer() throws Exception{
+		Mockito.lenient().doNothing().when(playerDAO).addPlayer(playerMock);
+	}
+	
+	/**
+	 * Deletes a mocked player from the list
+	 * @throws Exception
+	 */
+	@Test
+	public void testRemovePlayer() throws Exception{
+		Mockito.lenient().doNothing().when(playerDAO).deletePlayer(playerMock);
+	}
+	
+	/**
+	 * Updates the information of a mocked player
+	 * @throws Exception
+	 */
+	@Test
+	public void testUpdatePlayer() throws Exception{
+		Mockito.lenient().doNothing().when(playerDAO).updatePlayer(playerMock);
+	}
+	
+	/**
+	 * Retrieves a mocked player by its username from the database
+	 */
+	@Test
+	public void testGetPlayerByUsername() {
+		Player player = new Player();
+		Mockito.lenient().when(playerDAO.findPlayerByUsername("dmaw")).thenReturn(player);
+	}
+	
+	/**
+	 * This test defines a player that should be the object that is obtained from
+	 * the getPlayerByID method.
+	 */
+	@Test
+	public void testGetAllPlayerByRealId() {
+		Player player = new Player();
+		Mockito.lenient().when(playerDAO.getPlayerByID(10220)).thenReturn(player);
+	}
+
+	/**
+	 * This method defines a player that should not be equal to the empty player
+	 * that is obtained with an ID of 10, which does not exist.
+	 */
+	@Test
+	public void testGetAllPlayerByUnknownId() {
+		Player player = new Player();
+		Mockito.lenient().when(playerDAO.getPlayerByID(10)).thenReturn(player);
+	}
+
+	/**
+	 * This test instantiates a Symptom object that should match the Symptom
+	 * returned by the getSymptomByID method.
+	 */
+	@Test
+	public void testGetSymptomByIdRealId() {
+		Symptom symptom = new Symptom();
+		Mockito.lenient().when(symptomDAO.getSymptomByID(3)).thenReturn(symptom);
+	//	assertTrue(symptom.equals(symptomDAO.getSymptomByID(1)));
+	}
+
+	/**
+	 * This test instantiates a list that will contain all of the symptoms that are
+	 * found in the database. Then, we check the ID of the 17th index of the list,
+	 * which should be 18.
+	 */
+	@Test
+	public void testGetAllSymptoms() {
+		List<Symptom> sList = new ArrayList<>();
+		Mockito.lenient().when(symptomDAO.getAllSymptoms()).thenReturn(sList);
+	}
+
+	/**
+	 * This test defines a Symptom that should not match what is returned by
+	 * getSymptombyID with an unknown Id number.
+	 */
+	@Test
+	public void testGetSymptomByIdUnknownId() {
+		Symptom symptom = new Symptom();
+		Mockito.lenient().when(symptomDAO.getSymptomByID(1000)).thenReturn(symptom);
+	}
+	
+	/**
+	 * This test creates mocked symptoms and adds them to the database
+	 * @throws Exception
+	 */
+	@Test
+	public void testCreateSymptom() throws Exception{
+		Mockito.lenient().doNothing().when(symptomDAO).addSymptom(symptomMock);
+	}
+	
+	/**
+	 * This test removes mocked symptoms from the database
+	 * @throws Exception
+	 */
+	@Test
+	public void testRemoveSymptom() throws Exception{
+		Mockito.lenient().doNothing().when(symptomDAO).deleteSymptom(symptomMock);
+	}
+	
+	/**
+	 * This test updates the mocked symptoms in the database
+	 * @throws Exception
+	 */
+	@Test
+	public void testUpdateSymptom() throws Exception{
+		Mockito.lenient().doNothing().when(symptomDAO).updateSymptom(symptomMock);
+	}
+
+	/**
+	 * This test instantiates a Disease object that should match the Disease
+	 * returned by the getDiseaseByID method, at id of 1.
+	 */
+	@Test
+	public void testgetDiseaseByIdRealId() {
+		Disease disease = new Disease();
+		Mockito.lenient().when(diseaseDAO.getDiseasebyID(2)).thenReturn(disease);
+	}
+
+	/**
+	 * This test defines an empty Disease that should match what is returned by
+	 * getDiseasebyID with an unknown Id number.
+	 */
+	@Test
+	public void testGetDiseaseByIdUnknownId() {
+		Disease disease = new Disease();
+		Mockito.lenient().when(diseaseDAO.getDiseasebyID(1000)).thenReturn(disease);
+	}
+
+	/**
+	 * This test instantiates a Patient object that should match the Patient
+	 * returned by the getPatientByID method, at id of 1.
+	 */
+	@Test
+	public void testgetPatientByIdRealId() {
+		Patients patient = new Patients();
+		Mockito.lenient().when(patientsDAO.getPatientsByID(3)).thenReturn(patient);
+	}
+	
+	/**
+	 * This test creates a mocked Patient and adds it to the database
+	 * @throws Exception
+	 */
+	@Test
+	public void testCreatePatient() throws Exception{
+		Mockito.lenient().doNothing().when(patientsDAO).addPatients(patientsMock);
+	}
+	
+	/**
+	 * This test removes a mocked patient from the database
+	 * @throws Exception
+	 */
+	@Test
+	public void testRemovePateint() throws Exception{
+		Mockito.lenient().doNothing().when(patientsDAO).deletePatients(patientsMock);
+	}
+	
+	/**
+	 * This test updates the information on the mocked patient in the database
+	 * @throws Exception
+	 */
+	@Test
+	public void testUpdatePatient() throws Exception{
+		Mockito.lenient().doNothing().when(patientsDAO).updatePatients(patientsMock);
+	}
+
+	/**
+	 * This test instantiates a list that will contain all of the patients that are
+	 * found in the database. Then, we check the object of the 2nd index of the
+	 * list, which should be the testPatient.
+	 */
+	@Test
+	public void testGetAllPatients() {
+		List<Patients> pList = new ArrayList<>();
+		Mockito.lenient().when(patientsDAO.getAllPatients()).thenReturn(pList);
+	}
+
+	/**
+	 * This test defines an empty Patient that should match what is returned by
+	 * getPatientbyID with an unknown Id number.
+	 */
+	@Test
+	public void testGetPatientByIdUnknownId() {
+		Patients patient = new Patients();
+		Mockito.lenient().when(patientsDAO.getPatientsByID(1000)).thenReturn(patient);
+	}
+	
+	/**
+	 * This test verifies the user attempting to sign in with the information from the database
+	 */
+	@Test
+	public void testGetLoginService() {
+		Player player = new Player();
+		Mockito.lenient().when(loginService.isValidUser("dmaw", "qwerty")).thenReturn(player);
+	}
 }

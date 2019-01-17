@@ -1,3 +1,9 @@
+<!--@author Jake Mulrenin-->
+<!--THe html defines two divs that contain textareas used to display the patient info 
+and the disease cheat sheet. Interpolated global variables are injected into the view 
+once the variables are instantiated.-->
+
+
 <div>
   <button class="title" (click)="this.toggleDiagnosis()">Diagnosis</button>
   <textarea class="text" *ngIf="!this.globals.showDiagnosisCheatSheet" readonly>

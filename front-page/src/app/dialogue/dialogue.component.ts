@@ -1,3 +1,11 @@
+/**
+ * @author Jake Mulrenin
+ */
+/*The dialogue component outlines the area on the game page that deals with displaying
+the conversations between the lead doctor, the player, and the patients. The .ts file 
+contains a function that displays the first message of the game once the game page starts.
+It also contains the call to Java that sends the score data to be updated in the database.*/
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 import { HttpClient } from '@angular/common/http';

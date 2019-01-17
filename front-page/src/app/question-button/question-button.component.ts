@@ -1,3 +1,11 @@
+/**
+ * @author Jake Mulrenin
+ */
+/*The question button is responsible for displaying the conversation following when 
+the player wants to "question" the patient. The function, questionPatient(), checks
+which symptom is the question one and displays it to the dialogue page after a 
+series of dialogue. It also decrements the patients health by 20.*/
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 

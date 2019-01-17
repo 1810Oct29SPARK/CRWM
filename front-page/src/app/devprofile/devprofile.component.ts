@@ -1,3 +1,11 @@
+/**
+ * @author Darius Watts
+ */
+/*The dev profile displays the view for the developer page whenever a dev logs in. 
+It fetches players data from the global function loadPlayers() and displays them on the page.
+It will also grab the query params for username, and the dev's name and sets them to 
+the global variables.*/
+
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../global';
 import { ActivatedRoute } from '@angular/router';
@@ -19,7 +27,5 @@ export class DevprofileComponent implements OnInit {
     this.globals.username = this.activatedRoute.snapshot.queryParams.username;
     this.globals.playerFirstName = this.activatedRoute.snapshot.queryParams.firstname;
     this.globals.playerLastName = this.activatedRoute.snapshot.queryParams.lastname;
-    console.log(this.globals.username);
-    console.log(this.globals.playerFirstName);
 }
 }

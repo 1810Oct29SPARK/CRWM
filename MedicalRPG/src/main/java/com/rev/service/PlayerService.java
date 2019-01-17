@@ -8,6 +8,11 @@ import com.rev.beans.Player;
 import com.rev.dao.PlayerDao;
 import com.rev.daoimpl.PlayerDaoImpl;
 
+/**
+ * The player service will get all the player dao methods
+ * @author Darius
+ *
+ */
 @Service
 public class PlayerService {
 
@@ -36,6 +41,11 @@ public class PlayerService {
 	public void updatePlayer(Player player) {
 		pdao.updatePlayer(player);
 	}
+	/*
+	 * Find player will let us find a by its username
+	 * We want to use this instead of id so that the dev can never see the player id
+	 * We will use this same method service in delete update and find player inside of our controllers
+	 */
 	public Player findPlayer(String username) {
 		PlayerDaoImpl playin = new PlayerDaoImpl();
 		Player play = null;
