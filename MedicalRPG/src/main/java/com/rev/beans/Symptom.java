@@ -21,9 +21,6 @@ import javax.persistence.Table;
 @Table(name = "SYMPTOMS")
 public class Symptom {
 
-//	@ManyToMany(mappedBy = "symptom", fetch = FetchType.LAZY)
-//	public Set<Disease> diseases = new HashSet<>();
-
 	public Symptom(int symptom_ID, String symptom_Name, String symptom_Description, String is_Observable,
 			String is_Testable, String symptom_Test, String isDialogue) {
 		super();
@@ -37,7 +34,7 @@ public class Symptom {
 	}
 
 	public Symptom() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Id

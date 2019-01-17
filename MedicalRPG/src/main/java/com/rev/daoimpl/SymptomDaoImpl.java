@@ -12,10 +12,11 @@ import com.rev.beans.Symptom;
 import com.rev.dao.SymptomDao;
 import com.rev.util.HibernateUtil;
 
-/**
- * 
+/** 
  * @author Max
  *
+ *         These are the extrapolations on the Doas in the above package. Blocks
+ *         comments above each implementation provide details.
  */
 
 public class SymptomDaoImpl implements SymptomDao {
@@ -24,13 +25,10 @@ public class SymptomDaoImpl implements SymptomDao {
 	SessionFactory sf = HibernateUtil.getSessionFactory();
 
 	/**
-	 * This DAOImpl will return a particular symptom by its ID #
-	 * Within a try block (unsure if this is necessary) it grabs the current session
-	 * Begins a Transaction
-	 * Gets a symptom object
-	 * Commits the transaction
-	 * Closes the session
-	 * returns the symptom object
+	 * This DAOImpl will return a particular symptom by the ID #. Within a try
+	 * block (unsure if this is necessary) it grabs the current session. Begins a
+	 * Transaction. Gets a symptom object. Commits the transaction. Closes the
+	 * session and returns the symptom object.
 	 */
 	@Override
 	public Symptom getSymptomByID(int id) {
@@ -45,13 +43,10 @@ public class SymptomDaoImpl implements SymptomDao {
 	}
 
 	/**
-	 * This DAOImpl will return all symptoms
-	 * Within a try block (unsure if this is necessary) it grabs the current session
-	 * Begins a Transaction
-	 * Creates an ArrayList of all the symptom objects
-	 * Commits the transaction
-	 * Closes the session
-	 * Returns the list of all the symptoms
+	 * This DAOImpl will return all symptoms. Within a try block (unsure if this is
+	 * necessary) it grabs the current session. Begins a Transaction. Creates an
+	 * ArrayList of all the symptoms objects. Commits the transaction. Closes the
+	 * session. Returns the list of all the symptoms.
 	 */
 	@Override
 	public List<Symptom> getAllSymptoms() {
@@ -66,12 +61,10 @@ public class SymptomDaoImpl implements SymptomDao {
 	}
 
 	/**
-	 * This DAOImpl will update a symptom information
-	 * Within a try block (unsure if this is necessary) it grabs the current session
-	 * Begins a Transaction
-	 * Updates the symptom object based on input parameters
-	 * Commits the transaction
-	 * Closes the session
+	 * This DAOImpl will update symptom information. Within a try block (unsure if
+	 * this is necessary) it grabs the current session. Begins a Transaction. Updates
+	 * the symptom object based on input parameters. Commits the transaction. Closes
+	 * the session.
 	 */
 	@Override
 	public void updateSymptom(Symptom symptom) {
@@ -85,12 +78,9 @@ public class SymptomDaoImpl implements SymptomDao {
 	}
 
 	/**
-	 * This DAOImpl will create a symptom
-	 * Within a try block (unsure if this is necessary) it grabs the current session
-	 * Begins a Transaction
-	 * Creates a new symptom object
-	 * Commits the transaction
-	 * Closes the session
+	 * This DAOImpl will add a symptom. Within a try block (unsure if this is
+	 * necessary) it grabs the current session. Begins a Transaction. Creates a new
+	 * symptom object. Commits the transaction. Closes the session.
 	 */
 	@Override
 	public void addSymptom(Symptom symptom) {
@@ -104,12 +94,10 @@ public class SymptomDaoImpl implements SymptomDao {
 	}
 
 	/**
-	 * This DAOImpl will delete a symptom
-	 * Within a try block (unsure if this is necessary) it grabs the current session
-	 * Begins a Transaction
-	 * Removes the symptom from persistent to transient
-	 * Commits the transaction
-	 * Closes the session
+	 * This DAOImpl will delete a symptom. Within a try block (unsure if this is
+	 * necessary) it grabs the current session. Begins a Transaction. Removes the
+	 * symptom from persistent to transient. Commits the transaction. Closes the
+	 * session.
 	 */
 	@Override
 	public void deleteSymptom(Symptom symptom) {

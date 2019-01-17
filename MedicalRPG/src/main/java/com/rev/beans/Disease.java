@@ -22,9 +22,6 @@ import javax.persistence.Table;
  * @author Darius
  */
 
-//select all from disease_symptom where disease_id = :disease_id
-//@NamedQueries ({@NamedQuery (name="getDiseaseWithSymptoms", query="from DISEASE_SYMPTOMS WHERE DISEASE_ID = :DISEASE_ID")})
-
 @Entity
 @Table(name = "DISEASES")
 public class Disease {
@@ -41,16 +38,9 @@ public class Disease {
 		this.disease_description = disease_description;
 		this.symptom = symptom;
 	}
-
-//	public Disease(int disease_id, String disease_name, String disease_description) {
-//		super();
-//		this.disease_id = disease_id;
-//		this.disease_name = disease_name;
-//		this.disease_description = disease_description;
-//	}
 	
 	public Disease() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Id

@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.rev.beans.Symptom;
 
+/**
+ * @author Max Couch 
+ * 
+ * This creates basic CRUD methods. Please refer to Impl for specifics.
+ */
+
 public interface SymptomDao {
 	public Symptom getSymptomByID(int id);
 	public List<Symptom> getAllSymptoms();

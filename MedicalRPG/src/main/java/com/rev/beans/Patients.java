@@ -30,8 +30,6 @@ public class Patients {
 	
 	}
 	@Id
-	/*@GeneratedValue(strategy=GenerationType.AUTO, generator="patientSequence")
-	@SequenceGenerator(allocationSize= 1,name="patientSequence",sequenceName="SQ_PATIENT_PK")*/
 	@Column(name="PATIENT_ID")
 	private int patient_ID;
 	@Column(name="FIRST_NAME")

@@ -1,5 +1,15 @@
 package com.rev.beans;
 
+/**
+ * 
+ * @author Max Couch, Jake Mulrenin
+ *
+ *         This bean is for updating the player score. When the player presses
+ *         "submit score" at the end of the game, it initializes the variables
+ *         in angular with the new score, IF the score is higher than their
+ *         previous
+ */
+
 public class UsernameScore {
 
 	private String username;
@@ -10,7 +20,7 @@ public class UsernameScore {
 		this.username = username;
 		this.score = score;
 	}
-	
+
 	public UsernameScore() {
 		super();
 	}
