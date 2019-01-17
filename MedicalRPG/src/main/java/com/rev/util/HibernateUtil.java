@@ -4,7 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
- * Hibernate Util used to make a single sessionfactory to be refrenced by other classes
+ * Hibernate Util used to make a single sessionfactory to be referenced by other classes
  * @author Darius
  *
  */
