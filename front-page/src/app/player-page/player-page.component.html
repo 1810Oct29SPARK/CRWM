@@ -14,7 +14,7 @@
       <form class="playerUpdate" action="http://localhost:9999/MedicalRPG/update" method="post">
         <input type="text" name="username" value={{this.globals.username}} required readonly hidden>
         <p>New Username</p>
-        <input type="text" name="updateusername" required style="color:black;" placeholder="{{this.globals.playerLastName}}">
+        <input type="text" name="updateusername" required style="color:black;" placeholder="{{this.globals.username}}">
         <br>
         <br>
         <p>New Password</p>
@@ -22,11 +22,11 @@
         <br>
         <br>
         <p>New First Name</p>
-        <input type="text" name="firstname" required style="color:black;" placeholder="{{this.globals.playerFirstName}}">
+        <input type="text" name="firstname" required style="color:black;" value="{{this.globals.playerFirstName}}" placeholder="{{this.globals.playerFirstName}}">
         <br>
         <br>
         <p>New Last Name</p>
-        <input type="text" name="lastname" required style="color:black;" placeholder="{{this.globals.playerLastName}}">
+        <input type="text" name="lastname" required style="color:black;" value="{{this.globals.playerLastName}}" placeholder="{{this.globals.playerLastName}}">
         <br>
         <br>
         <button>Update</button>
